@@ -19,5 +19,6 @@ import './js/shopping-list-template';
 
 const booksApi = new booksAPI();
 
-booksApi.getCategoriesList();
-booksApi.getPopularBooks();
+booksApi.getSelectedCategory("Advice How-To and Miscellaneous");
+booksApi.getBookDetailedInfo("643282b1e85766588626a080");
+
