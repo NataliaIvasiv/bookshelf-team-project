@@ -1,7 +1,40 @@
 <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      
-    </ul>
-  </nav>
+  <div class="container">
+    <!-- logo -->
+    <div class="logo">
+      <a href="../index.html" class="header-logo-link">
+        <svg class="header-logo-svg">
+          <use href="#"></use>
+        </svg>
+        <svg class="header-logo-name">
+          <use href="#"></use>
+        </svg>
+      </a>
+    </div>
+
+    <!-- nav-bar -->
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link-home">Home</a></li>
+        <li>
+          <a href="./shopping-list.html" class="nav-link-shopping-list"
+            >Shopping list
+            <svg>
+              <use href="#"></use>
+            </svg>
+          </a>
+        </li>
+
+        <!-- theme switcher -->
+
+        <div id="theme-switcher">
+          <input type="checkbox" class="switch-theme-checkbox" id="switch-theme-checkbox">
+        <label for="switch-theme-checkbox" class="switch-theme-checkbox-label">
+            <span class="switch-ball"></span>
+        </label>
+        </div>
+      </ul>
+    </nav>
+  </div>
 </header>
