@@ -1,5 +1,5 @@
-function createModalMarkup(FROM_SERVER) {
-  return `<div class="modal-background">
+export function createModalMarkup(FROM_SERVER) {
+  const markup = `<div class="modal-background">
     <div class="modal-content-container">
     <button type="button" class="modal-close-btn"><img src="" class="modal-close-btn"/></button>
     <img src="${FROM_SERVER}" class="modal-book-image" />
@@ -14,8 +14,10 @@ function createModalMarkup(FROM_SERVER) {
     <button type="button" class="modal-btn">${FROM_LS}</button>
     </div>
     </div>
-    </div>`;
+    </div>`.join('\n');
+  return markup;
 }
 
-
-// 1 4 5 7 8 11-12 14
+export function pushMarkup(markup) {
+  document.body.insertAdjacentHTML('beforebegin', markup);
+}
