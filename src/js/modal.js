@@ -1,4 +1,4 @@
-export function createModalMarkup(FROM_SERVER, FROM_LS) {
+export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-background">
     <div class="modal-content-container">
     <button type="button" class="modal-close-btn"><img src="" class="modal-close-btn"/></button>
@@ -11,7 +11,7 @@ export function createModalMarkup(FROM_SERVER, FROM_LS) {
     <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[0].url}"><img src="AMAZON"/></a></li>
     <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[1].url}"><img src="APPLE BOOKS"/></a></li>
     </ul>
-    <button type="button" class="modal-btn">${FROM_LS}</button>
+    <button type="button" class="modal-btn"></button>
     </div>
     </div>
     </div>`.join('\n');
