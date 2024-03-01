@@ -1,5 +1,5 @@
 function getBookDetailInfo(selectedBookID){
-    const { book_image, title, author } = image;
+    const { book_image, title, author } = selectedBookID;
        
        return `<li class="book-item">
                     <div class="book-item-container">
