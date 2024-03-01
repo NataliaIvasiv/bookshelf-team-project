@@ -1,0 +1,34 @@
+       
+.book-card {
+    width: 180px;
+    height: 256px;
+    border-radius: 8px;
+    }
+    
+    .book-details {
+      width: 360px;
+      height: 48px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .book-title {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 110%;
+      letter-spacing: 0.04em;
+      color:rgba(17, 17, 17, 1);
+      ;
+    }
+    
+    .book-author {
+      font-weight: 400;
+      style: italic;
+      font-size: 12px;
+      line-height: 110%;
+      letter-spacing: 0.04em;
+      color:rgba(180, 175, 175, 1);
+      ;
+      
+    } 
