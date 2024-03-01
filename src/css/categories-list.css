@@ -1,35 +1,74 @@
-.categories-list-item{
-    font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 133%;
-        letter-spacing: -0.02em;
-        color: rgba(17, 17, 17, 0.6);
-        margin-bottom: 24px;
-        
+.categories-list-container {
+  max-width: 335px;
+  height: 228px;
+  overflow-y: auto;
 }
-.categories-list-item:last-child{
-    margin-bottom: 0;
-}
-.categories-list-container{
-     width: 335px;
-    height: 228px;
-}
-.categories-list-item:hover{
-    font-family: var(--font-family);
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 112%;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-        color: var(--violet);
-}
-@media screen and (min-width:768px) {
-
+.categories-list-container::-webkit-scrollbar {
+  width: 8px;
 }
 
+.categories-list-container::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  height: 114px;
+}
+.categories-list-main {
+  max-width: 307px;
+}
+.categories-list-item {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
+  margin-bottom: 24px;
+  text-transform: none;
+  transition: color 0.5s ease;
+}
+.categories-list-item:last-child {
+  margin-bottom: 0;
+}
 
+.categories-list-item:hover,
+.categories-list-item:focus {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--violet);
+  cursor: pointer;
+}
 
-@media screen and (min-width:1440px) {
+.categories-list-item:active {
+  text-transform: uppercase;
+  color: var(--violet);
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+  font-size: 18px;
+}
 
+@media screen and (min-width: 768px) {
+  .categories-list-container {
+    max-width: 337px;
+    height: 472px;
+  }
+
+  .categories-list-main {
+    max-width: 309px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .categories-list-container {
+    max-width: 356px;
+    height: 472px;
+  }
+
+  .categories-list-main {
+    max-width: 328px;
+  }
 }
