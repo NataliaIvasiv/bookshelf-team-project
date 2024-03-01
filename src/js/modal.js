@@ -11,7 +11,7 @@ export function createModalMarkup(FROM_SERVER) {
     <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[0].url}"><img src="AMAZON"/></a></li>
     <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[1].url}"><img src="APPLE BOOKS"/></a></li>
     </ul>
-    <button type="button" class="modal-btn"></button>
+    <button type="submit" class="modal-btn"></button>
     </div>
     </div>
     </div>`.join('\n');

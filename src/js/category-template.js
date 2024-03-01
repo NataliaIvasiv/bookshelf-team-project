@@ -1,8 +1,8 @@
                       
  function mainBookTemplate(book){
-    const { book_image, title, author } = book;
+    const { book_image, title, author, _id } = book;
        
-       return `<li class="book-item">
+       return `<li class="book-item" data-id="${_id}">
        <div class="book-item-container">
            <div class="book-card-container"> 
             <img class="book-card" src="${book_image}" alt="${title}">
