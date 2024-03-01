@@ -6,7 +6,7 @@ export function createBookMarkup(bookData) {
     list_name: categoryName,
     description,
     author,
-    buy_link: amazon,
+    buy_links: [amazon, apple_books],
   } = bookData;
 
   const markupOfBook = ` 
@@ -27,6 +27,9 @@ export function createBookMarkup(bookData) {
           <div class="shopping-list-book-links">
             <a class="test-link" href="${amazon.url}">
               <svg width="32" height="11" class="shopping-list-amazon"><use href="${iconsSL}#icon-amazon"></use></svg>
+              <a class="test-link" href="${apple_books.url}">
+            <svg width="16" height="16" class="shopping-list-apple"><use href="${iconsSL}#icon-apple-books-logo"></use></svg>
+          </a>
             </a>
           </div>
           <button data-id="${bookId}" class="shopping-list-dlt-book-btn" >
