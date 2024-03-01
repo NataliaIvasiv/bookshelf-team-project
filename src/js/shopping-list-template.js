@@ -1,4 +1,4 @@
-function createBookMarkup(bookData) {
+export function createBookMarkup(bookData) {
   const {
     _id: bookId,
     book_image: bookImage,
