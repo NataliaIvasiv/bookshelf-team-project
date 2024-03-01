@@ -1,4 +1,10 @@
-       
+       /* main section common styles *****************/
+
+.main-section{
+  margin-top: 40px;
+}
+
+       /*all books  **********************************/
 .book-card {
     width: 180px;
     height: 256px;
