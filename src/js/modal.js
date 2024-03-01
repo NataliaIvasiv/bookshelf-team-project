@@ -1,21 +1,23 @@
-function createModalMarkup(FROM_SERVER) {
-  return `<div class="modal-background">
+export function createModalMarkup(FROM_SERVER) {
+  const markup = `<div class="modal-background">
     <div class="modal-content-container">
     <button type="button" class="modal-close-btn"><img src="" class="modal-close-btn"/></button>
-    <img src="${FROM_SERVER}" class="modal-book-image" />
+    <img src="${FROM_SERVER.book_image}" class="modal-book-image" />
     <div class="modal-book-info">
-    <h3 class="modal-title">${FROM_SERVER}</h3>
-    <p class="modal-author">${FROM_SERVER}</p>
-    <p class="modal-description">${FROM_SERVER}</p>
+    <h3 class="modal-title">${FROM_SERVER.title}</h3>
+    <p class="modal-author">${FROM_SERVER.author}</p>
+    <p class="modal-description">${FROM_SERVER.description}</p>
     <ul class="modal-shops-list">
-    <li class="modal-shops-item"></li>
-    <li class="modal-shops-item"></li>
+    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[0].url}"><img src="AMAZON"/></a></li>
+    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[1].url}"><img src="APPLE BOOKS"/></a></li>
     </ul>
-    <button type="button" class="modal-btn">${FROM_LS}</button>
+    <button type="button" class="modal-btn"></button>
     </div>
     </div>
-    </div>`;
+    </div>`.join('\n');
+  return markup;
 }
 
-
-// 1 4 5 7 8 11-12 14
+export function pushMarkup(markup) {
+  document.body.insertAdjacentHTML('beforebegin', markup);
+}

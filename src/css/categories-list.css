@@ -1,3 +1,35 @@
-.categories-list-main{
-    color: var(--yellow);
+.categories-list-item{
+    font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 133%;
+        letter-spacing: -0.02em;
+        color: rgba(17, 17, 17, 0.6);
+        margin-bottom: 24px;
+        
+}
+.categories-list-item:last-child{
+    margin-bottom: 0;
+}
+.categories-list-container{
+     width: 335px;
+    height: 228px;
+}
+.categories-list-item:hover{
+    font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 112%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--violet);
+}
+@media screen and (min-width:768px) {
+
+}
+
+
+
+@media screen and (min-width:1440px) {
+
 }

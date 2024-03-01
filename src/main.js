@@ -15,9 +15,26 @@ import './js/refs';
 import './js/themes';
 import './js/shopping-list-render-function';
 import './js/shopping-list-template';
-
+import './js/header';
+import './js/categories-list-render'
+import { renderCategoriesList } from "./js/categories-list-render";
 
 const booksApi = new booksAPI();
 
+booksApi.getSelectedCategory("Advice How-To and Miscellaneous");
+booksApi.getBookDetailedInfo("643282b1e85766588626a080");
 booksApi.getCategoriesList();
-booksApi.getPopularBooks();
+
+
+// categories-list**************************************8
+
+async function addCategoriesList() {
+    const books = await booksApi.getCategoriesList();
+    renderCategoriesList(books);
+}
+
+addCategoriesList();
+
+let selectedCategory; 
+// should delete later
+

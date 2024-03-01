@@ -1,7 +1,99 @@
 <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      
+  <div class="container content-wrapper">
+    <!-- nav-bar -->
+
+    <nav class="nav">
+      <!-- logo -->
+      <div class="logo">
+        <a href="../index.html" class="header-logo-link">
+          <svg class="header-logo-svg" width="24" height="24">
+            <use href="#"></use>
+          </svg>
+          <svg class="header-logo-name" width="77" height="14">
+            <use href="#"></use>
+          </svg>
+        </a>
+      </div>
+
+      <!-- nav-list -->
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="../index.html" class="nav-link-home nav-link">Home</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="../shopping-list.html" class="nav-link-shopping-list nav-link"
+            >Shopping list
+            <svg width="20" height="20">
+              <use href="#"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- theme switcher -->
+
+    <div class="switch-signup-wrapper">
+      <div class="switch_burger-menu-wrapper">
+        <div id="theme-switcher">
+          <input
+            type="checkbox"
+            class="switch-theme-checkbox"
+            id="switch-theme-checkbox"
+          />
+          <label
+            for="switch-theme-checkbox"
+            class="switch-theme-checkbox-label"
+          >
+            <span class="switch-ball"></span>
+          </label>
+        </div>
+
+        <button type="button" class="burger-menu-open-btn">
+          <svg class="mobile-menu-svg" width="28" height="28">
+            <use href="#"></use>
+          </svg>
+        </button>
+
+        <button type="button" class="burger-menu-close-btn">
+          <svg class="mobile-menu-svg" width="28" height="28">
+            <use href="#"></use>
+          </svg>
+        </button>
+      </div>
+
+      <!-- sign-up button -->
+
+      <button type="button" class="header-login-btn">
+        Sign up
+        <svg width="20" height="20">
+          <use href="#"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- burger menu -->
+
+  <div class="burger-menu">
+    <ul class="burger-menu-list">
+      <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link-home">Home</a></li>
+        <li>
+          <a href="./shopping-list.html" class="nav-link-shopping-list"
+            >Shopping list
+            <svg>
+              <use href="#"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </ul>
-  </nav>
+    <button class="burger-logout-btn" type="button">
+      Log out
+      <svg width="20px" height="20px">
+        <use href="#"></use>
+      </svg>
+    </button>
+  </div>
 </header>

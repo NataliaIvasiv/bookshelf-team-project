@@ -1,9 +1,11 @@
 import axios from "axios";
 
+let selectedCategory;
+let selectedBookID;
 export class booksAPI{
     constructor() {
         this.BASE_URL = 'https://books-backend.p.goit.global/books';
-        this.API_KEY = '';
+        
     }
 
     async getCategoriesList() {
@@ -18,14 +20,14 @@ export class booksAPI{
         return res.data;
     }
 
-    async getSelectedCategory() {
-        const url = this.BASE_URL + '/category?category=selectedCategory';
+    async getSelectedCategory(selectedCategory) {
+        const url = this.BASE_URL + `/category?category=${selectedCategory}`;
         const res = await axios.get(url);
         return res.data;
     }
 
-    async gerBookDetailedInfo() {
-        const url = this.BASE_URL + '/bookId';
+    async getBookDetailedInfo(selectedBookID) {
+        const url = this.BASE_URL + `/${selectedBookID}`;
         const res = await axios.get(url);
         return res.data;
     }
