@@ -11,6 +11,7 @@ export class booksAPI{
     async getCategoriesList() {
         const url = this.BASE_URL + '/category-list';
         const res = await axios.get(url);
+        console.log(res);
         return res.data;
     }
 
