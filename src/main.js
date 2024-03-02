@@ -82,5 +82,6 @@ booksList.addEventListener('click', async e => {
         toggleShoppingList(book);
     })
 });
+hideModal()
 
 // =====================================
