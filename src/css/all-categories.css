@@ -4,7 +4,9 @@
         height: 485px;
         border-radius: 8px;
         }
-
+.book-item:hover{
+  transform: scale(1.04);
+}
 .book-item-container{
   
           margin-bottom: 40px;
@@ -31,7 +33,7 @@
     }
 
     @media screen and (min-width: 1440px) {
-
+      
       .book-item-container {
         position: relative;
       } 
