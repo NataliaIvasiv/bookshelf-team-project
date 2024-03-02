@@ -19,15 +19,22 @@ import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
-
+import './js/popular-books-render'
 const booksApi = new booksAPI();
 
 
 // categories-list**************************************
 
 async function addCategoriesList() {
-  const books = await booksApi.getCategoriesList();
-  renderCategoriesList(books);
+    let books;
+    try {
+        books = await booksApi.getCategoriesList();
+    } catch(err) {
+        console.log(err)
+        return
+    }
+    renderCategoriesList(books);
+    
 }
 
 addCategoriesList();
@@ -70,7 +77,8 @@ async function onCatListClick(e) {
 const booksList = document.querySelector('.categories-list-main');
 booksList.addEventListener('click', async e => {
   if (e.target === e.currentTarget) return;
-  const bookId = e.target.dataset.id;
+    const bookId = e.target.dataset.id;
+if (!bookId) return
   const book = await booksApi.getBookDetailedInfo(bookId);
   const markup = createModalMarkup(book);
   pushMarkup(markup);
@@ -82,6 +90,6 @@ booksList.addEventListener('click', async e => {
         toggleShoppingList(book);
     })
 });
-hideModal()
+//hideModal()
 
 // =====================================
