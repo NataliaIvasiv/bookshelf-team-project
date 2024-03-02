@@ -23,7 +23,7 @@ export function createEmptyBackground() {
       </div>`;
 }
 
-shoppingListContainer.insertAdjacentHTML(
-  'beforeend',
-  createShoppingListMarkup([])
-);
+// shoppingListContainer.insertAdjacentHTML(
+//   'beforeend',
+//   createShoppingListMarkup([])
+// );

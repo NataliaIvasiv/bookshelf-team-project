@@ -19,7 +19,7 @@ import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
-
+import './js/popular-books-render'
 const booksApi = new booksAPI();
 
 
