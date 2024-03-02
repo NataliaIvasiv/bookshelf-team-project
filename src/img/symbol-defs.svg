@@ -153,7 +153,7 @@
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286" d="M22.667 13.333H4M28 8H4M28 18.667H4M22.667 24H4"/>
     </symbol>
     <symbol id="icon-arrow-narrow-right1" viewBox="0 0 43 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="5.333" d="M3.556 16h35.555m0 0L25.778 2.667M39.111 16 25.778 29.333"/>
+      <path stroke="#EAC645" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.333" d="M3.556 16h35.555m0 0L25.778 2.667M39.111 16 25.778 29.333"/>
     </symbol>
     <symbol id="icon-dump1" viewBox="0 0 32 32">
       <path d="M29.217 13.217c0 7.3-5.918 13.217-13.217 13.217S2.783 20.516 2.783 13.217C2.783 5.917 8.701 0 16 0s13.217 5.918 13.217 13.217z"/>
