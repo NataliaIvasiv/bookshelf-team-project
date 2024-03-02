@@ -21,3 +21,4 @@ export function createModalMarkup(FROM_SERVER) {
 export function pushMarkup(markup) {
   document.body.insertAdjacentHTML('beforebegin', markup);
 }
+
