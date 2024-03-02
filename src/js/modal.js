@@ -14,12 +14,13 @@ export function createModalMarkup(FROM_SERVER) {
     <button type="submit" class="modal-btn"></button>
     </div>
     </div>
-    </div>`.join('\n');
-  return markup;
+    </div>`;
+  // return markup;
+  pushMarkup(markup);
 }
 
 export function pushMarkup(markup) {
-  document.body.insertAdjacentHTML('beforebegin', markup);
+  document.body.insertAdjacentHTML('beforeend', markup);
 }
 
 export function hideModal() {
@@ -44,22 +45,20 @@ export function hideModal() {
       removeListeners();
     }
   });
-
-  function removeListeners() {
-    const modalBackdrop = document.querySelector('.modal-backdrop');
-
-    modalBackdrop.parentNode.removeChild(modalBackdrop);
-
-    document.removeEventListener('keydown', e => {
-      console.log('listener is remove');
-    });
-    modalCloseBtn.removeEventListener('click', e => {
-      console.log('listener is remove');
-    });
-    modalBackdrop.removeEventListener('click', e => {
-      console.log('listener is remove');
-    });
-  }
 }
 
+export function removeListeners() {
+  const modalBackdrop = document.querySelector('.modal-backdrop');
 
+  modalBackdrop.parentNode.removeChild(modalBackdrop);
+
+  document.removeEventListener('keydown', e => {
+    console.log('listener is remove');
+  });
+  modalCloseBtn.removeEventListener('click', e => {
+    console.log('listener is remove');
+  });
+  modalBackdrop.removeEventListener('click', e => {
+    console.log('listener is remove');
+  });
+}

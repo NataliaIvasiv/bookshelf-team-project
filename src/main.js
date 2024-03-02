@@ -19,26 +19,23 @@ import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
-import './js/popular-books-render'
+import './js/popular-books-render';
 const booksApi = new booksAPI();
-
 
 // categories-list**************************************
 
 async function addCategoriesList() {
-    let books;
-    try {
-        books = await booksApi.getCategoriesList();
-    } catch(err) {
-        console.log(err)
-        return
-    }
-    renderCategoriesList(books);
-    
+  let books;
+  try {
+    books = await booksApi.getCategoriesList();
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+  renderCategoriesList(books);
 }
 
 addCategoriesList();
-
 
 // all-categories*******************************************
 let selectedCategory;
@@ -49,47 +46,49 @@ const categoriesListMain = document.querySelector('.categories-list-main');
 categoriesListMain.addEventListener('click', onCatListClick);
 
 async function onCatListClick(e) {
-    e.preventDefault();
-    let books;
-    if (e.target === e.currentTarget) return;
-    selectedCategory = e.target.closest('li');
-    if (selectedCategory.textContent === 'All categories') {
-        try {
-            const popularBooks = await booksApi.getPopularBooks();
-            console.log(popularBooks)
-        }
-        catch (err) {
-            console.log('error');
-        }
-    }
+  e.preventDefault();
+  let books;
+  if (e.target === e.currentTarget) return;
+  selectedCategory = e.target.closest('li');
+  if (selectedCategory.textContent === 'All categories') {
     try {
-        books = await booksApi.getSelectedCategory(selectedCategory.textContent);
-    } catch(err) {
-        console.log('error');
+      const popularBooks = await booksApi.getPopularBooks();
+      console.log(popularBooks);
+    } catch (err) {
+      console.log('error');
     }
-   
-   renderCategoriesMain(books);
-}
+  }
+  try {
+    books = await booksApi.getSelectedCategory(selectedCategory.textContent);
+  } catch (err) {
+    console.log('error');
+  }
 
+  renderCategoriesMain(books);
+}
 
 // ================modal================
 
-const booksList = document.querySelector('.categories-list-main');
+const booksList = document.querySelector('.all-categories-main');
 booksList.addEventListener('click', async e => {
-  if (e.target === e.currentTarget) return;
-    const bookId = e.target.dataset.id;
-if (!bookId) return
-  const book = await booksApi.getBookDetailedInfo(bookId);
-  const markup = createModalMarkup(book);
-  pushMarkup(markup);
+    if (e.target === e.currentTarget) return;
+    
+  const bookId = e.target.dataset.id;
+
+    
+    const book = await booksApi.getBookDetailedInfo(bookId);
+    console.log('book');
+    
+  createModalMarkup(book);
+//   pushMarkup(markup);
 
   const modalBtn = document.querySelector('.modal-btn');
-    checkBookStatus(book);
-    modalBtn.addEventListener('click', elem => {
-        elem.preventDefault()
-        toggleShoppingList(book);
-    })
+  checkBookStatus(book);
+  modalBtn.addEventListener('click', elem => {
+    elem.preventDefault();
+    toggleShoppingList(book);
+    hideModal();
+  });
 });
-//hideModal()
 
 // =====================================
