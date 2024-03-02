@@ -1,5 +1,5 @@
                       
- function mainBookTemplate(book){
+ export function mainBookTemplate(book){
     const { book_image, title, author, _id } = book;
        
        return `<li class="book-item" data-id="${_id}">
@@ -16,7 +16,8 @@
   </li>`;
            } 
   
-    export function mainBooksTemplate(books) {
-      return books.map((book) => mainBookTemplate(book)).join('');
+export function mainBooksTemplate(books) {
+      return books.map(mainBookTemplate).join('');
   }
+  
   
