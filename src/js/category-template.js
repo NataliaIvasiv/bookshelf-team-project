@@ -20,4 +20,4 @@ export function mainBooksTemplate(books) {
       return books.map(mainBookTemplate).join('');
   }
   
-  
+
