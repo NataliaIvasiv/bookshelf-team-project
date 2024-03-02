@@ -55,7 +55,12 @@ export const supportArray = [
   },
 ];
 
-const supportList = document.querySelector('.swiper-wrapper');
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const supportList = document.querySelector('.support__list-js');
 const upBtn = document.querySelector('.swiper-button-next');
 
 upBtn.addEventListener('click', onLater);
@@ -64,20 +69,29 @@ function findImage(name, anArrayImage) {return anArrayImage.find(found => found.
 
 function renderMarkup(array) {supportList.insertAdjacentHTML("beforeend", array);}
 
-const markup = supportArray.map(({ title, url }, index) => {
-  const number = (index + 1).toString().padStart(2, '0');
-  const imgfinded = findImage(title, supportArray);
-  const images = images.finded.img;
+// const markup = supportArray.map(({ title, url }, index) => {
+//   const number = (index + 1).toString().padStart(2, '0');
+//   const imgfinded = findImage(title, supportArray);
+//   const images = img.finded.img;
 
-  return `<div class="support-item swiper-slide">
-  <a href="${url}" class="support-link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
-  <p class="support-number">${number}</p>
-  <img class="support-img" src="${img}" data-source="${url}" alt="${title}"/>
-  </a></div>`;
-  })
-  .join('');
+//   return `<div class="support__item swiper-slide">
+//   <a href="${url}" class="support__link img" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
+//   <img class="support__img" src="${img}" data-source="${img2}" alt="${title}" />
+//   </a></div>`;
+//   })
+//   .join('');
 
-  renderMarkup(markup);
+//   renderMarkup(markup);
+// renderMarkup(markup);
+
+const markup = supportArray.map(({ title, url, img, img2 }) => {
+  return `<div class="support__item swiper-slide">
+    <a href="${url}" class="support__link img" aria-label="${title}" target="_blank" rel="noopener noreferrer nofollow">
+      <img class="support__img" src="${img}" data-source="${img2}" alt="${title}" />
+    </a>
+  </div>`;
+}).join('');
+
 renderMarkup(markup);
 
 const swiper = new Swiper('.swiper', {
@@ -93,6 +107,6 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-function onLater { swiper.slideNext(200);
+function onLater() { swiper.slideNext(200);
 }
   
