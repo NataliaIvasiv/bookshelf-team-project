@@ -7,8 +7,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { booksAPI } from './js/booksAPI';
-import './js/category-render-function';
-import './js/category-template';
+// import './js/category-render-function';
+// import { mainBooksTemplate } from './js/category-template';
 import './js/localStorageFunctions';
 import './js/modal';
 import './js/refs';
@@ -18,31 +18,67 @@ import './js/shopping-list-template';
 import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
-
+import { renderCategoriesMain } from './js/category-render-function';
+import './js/popular-books-render'
 const booksApi = new booksAPI();
 
-booksApi.getSelectedCategory('Advice How-To and Miscellaneous');
-booksApi.getBookDetailedInfo('643282b1e85766588626a080');
-booksApi.getCategoriesList();
 
-// categories-list**************************************8
+// categories-list**************************************
 
 async function addCategoriesList() {
-  const books = await booksApi.getCategoriesList();
-  renderCategoriesList(books);
+    let books;
+    try {
+        books = await booksApi.getCategoriesList();
+    } catch(err) {
+        console.log(err)
+        return
+    }
+    renderCategoriesList(books);
+    
 }
 
 addCategoriesList();
 
+
+// all-categories*******************************************
 let selectedCategory;
+
 // should delete later
+const categoriesListMain = document.querySelector('.categories-list-main');
+
+categoriesListMain.addEventListener('click', onCatListClick);
+
+async function onCatListClick(e) {
+    e.preventDefault();
+    let books;
+    if (e.target === e.currentTarget) return;
+    selectedCategory = e.target.closest('li');
+    if (selectedCategory.textContent === 'All categories') {
+        try {
+            const popularBooks = await booksApi.getPopularBooks();
+            console.log(popularBooks)
+        }
+        catch (err) {
+            console.log('error');
+        }
+    }
+    try {
+        books = await booksApi.getSelectedCategory(selectedCategory.textContent);
+    } catch(err) {
+        console.log('error');
+    }
+   
+   renderCategoriesMain(books);
+}
+
 
 // ================modal================
 
 const booksList = document.querySelector('.categories-list-main');
 booksList.addEventListener('click', async e => {
   if (e.target === e.currentTarget) return;
-  const bookId = e.target.dataset.id;
+    const bookId = e.target.dataset.id;
+if (!bookId) return
   const book = await booksApi.getBookDetailedInfo(bookId);
   const markup = createModalMarkup(book);
   pushMarkup(markup);
@@ -54,5 +90,6 @@ booksList.addEventListener('click', async e => {
         toggleShoppingList(book);
     })
 });
+//hideModal()
 
 // =====================================
