@@ -23,6 +23,30 @@ body.dark {
   .switch-theme-checkbox-label .switch-ball {
     box-shadow: inset -1px -1px 1px 0px rgba(0, 0, 0, 0.5);
   }
+
+  .nav-list-item {
+    stroke: var(--white);
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-logo-name {
+    fill: var(--white);
+  }
+
+  .categories-list-item,
+  .shopping-list-empty-paragraph {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .categories-list-item:hover,
+  .categories-list-item:focus,
+  .categories-list-item:active {
+    color: var(--yellow);
+  }
+
+  .shopping-list-title {
+    color: var(--white);
+  }
 }
 
 .switch-theme-checkbox {
@@ -227,6 +251,7 @@ body.dark {
     padding: 8px 16px;
     border-radius: 36px;
     transition: background-color 500ms linear;
+    stroke: var(--black);
   }
 
   .burger-menu {

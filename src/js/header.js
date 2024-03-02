@@ -42,15 +42,15 @@ const menuOpenBtn = document.querySelector('.burger-menu-open-btn');
 const menuCloseBtn = document.querySelector('.burger-menu-close-btn');
 const burgerMenu = document.querySelector('.burger-menu');
 
-function openMenu() {
+export function openMenu() {
   menuOpenBtn.style.display = 'none';
   menuCloseBtn.style.display = 'block';
   burgerMenu.style.display = 'block';
 }
-function closeMenu() {
+ export function closeMenu() {
   menuOpenBtn.style.display = 'block';
   menuCloseBtn.style.display = 'none';
-  burgerMenu.style.display = 'none';
+  urgerMenu.style.display = 'none';
 }
 
 // event listeners will be forwarded to main.js
