@@ -1,17 +1,6 @@
-const shoppingListContainer = document.querySelector('.shopping-list');
+import { createBookMarkup } from './shopping-list-template';
 
-export function createShoppingListMarkup(arrayOfBooks) {
-  let result;
-  if (arrayOfBooks.length === 0) {
-    result = createEmptyBackground();
-  } else {
-    const bookItems = arrayOfBooks.map(createBookMarkup).join('');
-    result = `
-      ${bookItems}
-    `;
-  }
-  return result;
-}
+const shoppingListContainer = document.querySelector('.shopping-list');
 
 export function createEmptyBackground() {
   return `
@@ -23,7 +12,17 @@ export function createEmptyBackground() {
       </div>`;
 }
 
-shoppingListContainer.insertAdjacentHTML(
-  'beforeend',
-  createShoppingListMarkup([])
-);
+export function createShoppingListMarkup(arrayOfBooks) {
+  if (arrayOfBooks.length === 0) {
+    return createEmptyBackground();
+  }
+
+  return arrayOfBooks.map(item => createBookMarkup(item)).join('');
+}
+
+if (shoppingListContainer) {
+  shoppingListContainer.insertAdjacentHTML(
+    'beforeend',
+    createShoppingListMarkup([])
+  );
+}
