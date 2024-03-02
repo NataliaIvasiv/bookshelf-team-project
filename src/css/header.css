@@ -64,6 +64,8 @@ body.dark {
 .logo {
   width: 109px;
   height: 28px;
+  display: flex;
+  gap: 8px;
 }
 
 .nav-list,
