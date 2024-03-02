@@ -50,7 +50,7 @@ export function openMenu() {
  export function closeMenu() {
   menuOpenBtn.style.display = 'block';
   menuCloseBtn.style.display = 'none';
-  urgerMenu.style.display = 'none';
+  burgerMenu.style.display = 'none';
 }
 
 // event listeners will be forwarded to main.js
