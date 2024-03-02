@@ -1,29 +1,12 @@
-const checkbox = document.getElementById("switch-theme-checkbox")
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark")
-})
+// add import of refs from refs.js
 
-// change background of the list elements to yellow 
+// this needs to be forwarded to refs.js
+const checkbox = document.getElementById('switch-theme-checkbox');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const nav = document.querySelector('.nav');
-    const listItems = nav.getElementsByTagName('li');
+// function itself
+export function toggleTheme() {
+  document.body.classList.toggle('dark');
+}
 
-    const currentPage = window.location.href;
-
-    for (let i = 0; i < listItems.length; i++) {
-      const link = listItems[i].querySelector('.nav-link');
-
-      if (link && link.href === currentPage) {
-        listItems[i].classList.add('current-page');
-      }
-
-      listItems[i].addEventListener('click', function (event) {
-        for (let j = 0; j < listItems.length; j++) {
-          listItems[j].classList.remove('current-page');
-        }
-
-        event.currentTarget.classList.add('current-page');
-      });
-    }
-  });
+// event listener that has to be forwarded to main.js
+checkbox.addEventListener('change', toggleTheme);
