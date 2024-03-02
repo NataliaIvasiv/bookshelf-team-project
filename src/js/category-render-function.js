@@ -1,9 +1,9 @@
 import { mainBooksTemplate } from "./category-template";  
-
+import {refs} from './refs'
 export function renderCategoriesMain(books) {
-      const categoriesMain = document.querySelector('.all-categories-main');
+      
       const markupMain = mainBooksTemplate(books);
-      categoriesMain.insertAdjacentHTML('beforeend', markupMain);
+      refs.categoriesMain.insertAdjacentHTML('beforeend', markupMain);
   }
  
            
