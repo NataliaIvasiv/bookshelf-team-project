@@ -54,3 +54,45 @@ export const supportArray = [
     img2: require('../../img/support/support-img9@2x.png'),
   },
 ];
+
+const supportList = document.querySelector('.swiper-wrapper');
+const upBtn = document.querySelector('.swiper-button-next');
+
+upBtn.addEventListener('click', onLater);
+
+function findImage(name, anArrayImage) {return anArrayImage.find(found => found.title === name);}
+
+function renderMarkup(array) {supportList.insertAdjacentHTML("beforeend", array);}
+
+const markup = supportArray.map(({ title, url }, index) => {
+  const number = (index + 1).toString().padStart(2, '0');
+  const imgfinded = findImage(title, supportArray);
+  const images = images.finded.img;
+
+  return `<div class="support-item swiper-slide">
+  <a href="${url}" class="support-link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
+  <p class="support-number">${number}</p>
+  <img class="support-img" src="${img}" data-source="${url}" alt="${title}"/>
+  </a></div>`;
+  })
+  .join('');
+
+  renderMarkup(markup);
+renderMarkup(markup);
+
+const swiper = new Swiper('.swiper', {
+  direction: 'vertical',
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 20,
+  breakpoints: {
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 20,
+    },
+  },
+});
+
+function onLater { swiper.slideNext(200);
+}
+  
