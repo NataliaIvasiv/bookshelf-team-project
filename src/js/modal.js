@@ -15,8 +15,8 @@ export function createModalMarkup(FROM_SERVER) {
     </div>
     </div>
     </div>`;
-  // return markup;
-  pushMarkup(markup);
+  return markup;
+  // pushMarkup(markup);
 }
 
 export function pushMarkup(markup) {
@@ -49,6 +49,8 @@ export function hideModal() {
 
 export function removeListeners() {
   const modalBackdrop = document.querySelector('.modal-backdrop');
+  const modalCloseBtn = document.querySelector('.modal-close-btn');
+
 
   modalBackdrop.parentNode.removeChild(modalBackdrop);
 

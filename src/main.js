@@ -9,8 +9,11 @@ import 'swiper/css/pagination';
 import { booksAPI } from './js/booksAPI';
 // import './js/category-render-function';
 // import { mainBooksTemplate } from './js/category-template';
-import './js/localStorageFunctions';
-import './js/modal';
+import {
+  toggleShoppingList,
+  checkBookStatus,
+} from './js/localStorageFunctions';
+import { createModalMarkup, pushMarkup, hideModal } from './js/modal';
 import './js/refs';
 import './js/themes';
 import './js/shopping-list-render-function';
@@ -71,21 +74,23 @@ async function onCatListClick(e) {
 
 const booksList = document.querySelector('.all-categories-main');
 booksList.addEventListener('click', async e => {
-    if (e.target === e.currentTarget) return;
-    
-  const bookId = e.target.dataset.id;
+  if (e.target === e.currentTarget) return;
 
-    
-    const book = await booksApi.getBookDetailedInfo(bookId);
-    console.log('book');
-    
-  createModalMarkup(book);
-//   pushMarkup(markup);
+  const bookId = e.target.closest('.book-item').dataset.id;
 
-  const modalBtn = document.querySelector('.modal-btn');
+  // console.log(bookId);
+  const book = await booksApi.getBookDetailedInfo(bookId);
+//   console.log(book);
+
+  const markup = createModalMarkup(book);
+  pushMarkup(markup);
+
   checkBookStatus(book);
-  modalBtn.addEventListener('click', elem => {
-    elem.preventDefault();
+  const modalButton = document.querySelector('.modal-btn');
+
+  modalButton.addEventListener('click', elem => {
+      elem.preventDefault();
+      
     toggleShoppingList(book);
     hideModal();
   });
