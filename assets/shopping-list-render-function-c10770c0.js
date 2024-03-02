@@ -31,4 +31,4 @@
           <img class="shopping-list-empty-img" src="" alt="Books in empty section"/>
         </div>
       </div>`}function u(o){return o.length===0?h():o.map(s=>g(s)).join("")}c&&c.insertAdjacentHTML("beforeend",u([]));
-//# sourceMappingURL=shopping-list-render-function-423bf898.js.map
+//# sourceMappingURL=shopping-list-render-function-c10770c0.js.map
