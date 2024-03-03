@@ -7,8 +7,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { booksAPI } from './js/booksAPI';
-// import './js/category-render-function';
-// import { mainBooksTemplate } from './js/category-template';
 import {
   toggleShoppingList,
   checkBookStatus,
@@ -26,6 +24,9 @@ import './js/popular-books-render';
 import { refs } from './js/refs';
 const booksApi = new booksAPI();
 
+// *******************header***************************
+
+
 // categories-list**************************************
 
 async function addCategoriesList() {
@@ -40,6 +41,8 @@ async function addCategoriesList() {
 }
 
 addCategoriesList();
+
+
 
 // all-categories*******************************************
 let selectedCategory;
@@ -74,6 +77,8 @@ async function onCatListClick(e) {
 console.log(books)
   renderCategoriesMain(books);
 }
+
+
 
 // ================modal================
 
