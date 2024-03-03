@@ -35,7 +35,7 @@ body.dark {
 
   .categories-list-item,
   .shopping-list-empty-paragraph {
-    color: rgba(255, 255, 255, 0.6);
+    color: #b4afaf;
   }
 
   .categories-list-item:hover,
