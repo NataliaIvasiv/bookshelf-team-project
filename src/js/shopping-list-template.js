@@ -33,7 +33,7 @@ export function createBookMarkup(bookData) {
           </a>
           </div>
           <button data-id="${bookId}" class="shopping-list-dlt-book-btn" >
-            <svg class="shopping-list-dlt-book-btn-icon" width="16" height="16"><use href=""></use></svg>
+            <svg class="shopping-list-dlt-book-btn-icon" width="16" height="16"><use href="../img/symbol-defs.svg#icon-trash1"></use></svg>
           </button>
         </div>
       </div>
