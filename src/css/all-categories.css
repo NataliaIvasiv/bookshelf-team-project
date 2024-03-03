@@ -1,3 +1,10 @@
+  .categories-list-container{
+    margin-bottom: 40px;
+  } 
+  
+  .support-container{
+    margin-bottom: 40px;
+  }
        /*all books  **********************************/
 .book-card {
         width: 335px;
@@ -28,6 +35,10 @@
 }
 
 .book-title{
+  width: 218px;
+}
+
+.book-author{
   width: 218px;
 }
     }
@@ -95,7 +106,7 @@
       line-height: 110%;
       letter-spacing: 0.04em;
       color:rgba(17, 17, 17, 1);
-      
+      width: 180px;
     }
     
 .book-author {
@@ -105,6 +116,6 @@
     line-height: 110%;
     letter-spacing: 0.04em;
     color:rgba(180, 175, 175, 1);
-      
+     width: 180px; 
     } 
     }
