@@ -62,9 +62,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-supportList: document.querySelector('.support__list-js');
-upBtn: document.querySelector('.swiper-button-next');
-
 refs.upBtn.addEventListener('click', onLater);
 
 function findImage(name, anArrayImage) {return anArrayImage.find(found => found.title === name);}
@@ -74,7 +71,7 @@ function renderMarkup(array) {refs.supportList.insertAdjacentHTML("beforeend", a
 const markup = supportArray.map(({ title, url }, index) => {
   const number = (index + 1).toString().padStart(2, '0');
   const imgfinded = findImage(title, supportArray);
-  const images = img.finded.img;
+  const images = imgfinded.img;
 
   return `<div class="support__item swiper-slide">
   <a href="${url}" class="support__link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
