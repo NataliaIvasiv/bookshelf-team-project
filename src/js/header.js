@@ -33,6 +33,7 @@ export function changeNavBgColor() {
 // function should be called in main.js
 changeNavBgColor();
 
+
 // -----------------------------------------------
 
 // burger menu
