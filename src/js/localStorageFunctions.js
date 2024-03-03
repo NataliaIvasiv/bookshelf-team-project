@@ -1,3 +1,4 @@
+import {refs} from './refs'
 export function toggleShoppingList(book) {
   const modalButton = document.querySelector('.modal-btn');
 

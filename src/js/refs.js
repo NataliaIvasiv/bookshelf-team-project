@@ -17,9 +17,16 @@ categoriesListMain: document.querySelector('.categories-list-main'),
   //all-categories
   categoriesMain: document.querySelector('.all-categories-main'),
   
-  //modal
+  // support
+supportList: document.querySelector('.support__list-js'),
+upBtn: document.querySelector('.swiper-button-next'),
+
+  //modal 
 modalBackdrop: document.querySelector('.modal-backdrop'),
   modalCloseBtn: document.querySelector('.modal-close-btn'),
-  // modalButton: document.querySelector('.modal-btn'),
+  //modalButton: document.querySelector('.modal-btn'),
+
+  //shoplist
+shoppingListContainer: document.querySelector('.shopping-list'),
 
 };

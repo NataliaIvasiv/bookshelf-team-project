@@ -12,7 +12,6 @@ import {
   checkBookStatus,
 } from './js/localStorageFunctions';
 import { createModalMarkup, pushMarkup, hideModal } from './js/modal';
-import './js/refs';
 import './js/themes';
 import './js/shopping-list-render-function';
 import './js/shopping-list-template';

@@ -1,3 +1,4 @@
+import { refs } from "./refs";
 export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-backdrop">
     <div class="modal-content-container">
