@@ -64,7 +64,7 @@
 
       <!-- sign-up button -->
 
-      <button type="button" class="header-login-btn">
+      <button type="button" class="header-login-btn" id="openModalBtn">
         Sign up
         <svg width="20" height="20">
           <use href="/img/symbol-defs.svg#icon-arrow-narrow-right1"></use>
@@ -109,3 +109,55 @@
     </div>
   </div>
 </header>
+
+<!-- modal window for sign-in /sign-up -->
+
+<div class="modal-sign-container">
+    
+
+  <div id="signupModal" class="modal">
+    <svg class="closeModalBtn" width="28" height="28">
+      <use href="./img/symbol-defs.svg#icon-x-close1"></use>
+    </svg>
+
+    <form id="signUpForm" class="sign-up-form" action="https://formspree.io/f/xbjbrrao"
+    method="POST">
+      <input class="sign-input" type="text" placeholder="Name" id="nameInput" name='name' required/>
+      <div class="input-container">
+        <input class="sign-input" type="email" placeholder="Email" id="emailInput" name='email' required />
+        <svg class='input-svg' width="28" height="28">
+          <use href="../img/symbol-defs.svg#icon-mail"></use>
+        </svg>
+      </div>
+      <div class="input-container">
+        <input class="sign-input" type="password" placeholder="Password" id="passwordInput" name='password' required />
+        <svg class='input-svg' width="28" height="28">
+          <use href="../img/symbol-defs.svg#icon-lock"></use>
+        </svg>
+      </div>
+      <button class="signUpBtn" type="submit">Sign Up</button>
+    </form>
+
+    <form id="signInForm" class="sign-in-form" action="https://formspree.io/f/xbjbrrao"
+    method="POST">
+      <div class="input-container">
+        <input class="sign-input" type="email" placeholder="Email" id="emailInputSignIn" name='email' required />
+        <svg class='input-svg' width="28" height="28">
+          <use href="../img/symbol-defs.svg#icon-mail"></use>
+        </svg>
+      </div>
+      <div class="input-container">
+        <input class="sign-input" type="password" placeholder="Password" id="passwordInputSignIn" name='password' required />
+        <svg class='input-svg' width="28" height="28">
+          <use href="../img/symbol-defs.svg#icon-lock"></use>
+        </svg>
+      </div>
+      <button class="signInBtn" type="submit">Sign In</button>
+    </form>
+
+    <div class="signupOptions">
+      <button class="signUpOption">Sign Up</button>
+      <button class="signInOption">Sign In</button>
+    </div>
+  </div>
+</div>
