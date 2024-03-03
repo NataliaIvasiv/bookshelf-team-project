@@ -4,6 +4,34 @@
            margin-top: 40px;
            margin-right: 20px;
            margin-left: 20px;
+
        }
 
 /************* sidebar **********************************/
+@media screen and (min-width:768px) {
+.main-section .container{
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+.sidebar{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+}
+
+
+
+@media screen and (min-width:1440px) {
+    .main-section .container{
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+ .sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+ }
+}

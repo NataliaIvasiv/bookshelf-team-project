@@ -59,15 +59,15 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { refs } from './refs';
 
-const supportList = document.querySelector('.support__list-js');
-const upBtn = document.querySelector('.swiper-button-next');
 
-upBtn.addEventListener('click', onLater);
+
+refs.upBtn.addEventListener('click', onLater);
 
 function findImage(name, anArrayImage) {return anArrayImage.find(found => found.title === name);}
 
-function renderMarkup(array) {supportList.insertAdjacentHTML("beforeend", array);}
+function renderMarkup(array) {refs.supportList.insertAdjacentHTML("beforeend", array);}
 
 // const markup = supportArray.map(({ title, url }, index) => {
 //   const number = (index + 1).toString().padStart(2, '0');
