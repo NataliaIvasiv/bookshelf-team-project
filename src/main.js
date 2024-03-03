@@ -23,6 +23,7 @@ import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
 import './js/popular-books-render';
+import { refs } from './js/refs';
 const booksApi = new booksAPI();
 
 // categories-list**************************************
@@ -51,6 +52,7 @@ categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
+  refs.categoriesMain.innerHTML = '';
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
   if (selectedCategory.textContent === 'All categories') {
