@@ -31,4 +31,4 @@
           <img class="shopping-list-empty-img" src="" alt="Books in empty section"/>
         </div>
       </div>`}function h(i){return i.length===0?g():i.map(n=>m(n)).join("")}s.shoppingListContainer&&s.shoppingListContainer.insertAdjacentHTML("beforeend",h([]));let l;function f(){function i(){s.listItems.forEach(t=>t.classList.remove("current-page"))}function n(t){t&&t.href===s.currentPage&&t.closest(".nav-list-item").classList.add("current-page")}function r(t){i(),t.currentTarget.classList.add("current-page")}s.listItems.forEach(t=>{l=t.querySelector(".nav-link"),n(l),t.addEventListener("click",r)})}f();function y(){s.menuOpenBtn.style.display="none",s.menuCloseBtn.style.display="block",s.burgerMenu.style.display="block"}function b(){s.menuOpenBtn.style.display="block",s.menuCloseBtn.style.display="none",s.burgerMenu.style.display="none"}s.menuOpenBtn.addEventListener("click",y);s.menuCloseBtn.addEventListener("click",b);export{s as r};
-//# sourceMappingURL=header-43b7b4ac.js.map
+//# sourceMappingURL=header-d3a4bec5.js.map
