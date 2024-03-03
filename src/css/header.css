@@ -47,6 +47,13 @@ body.dark {
   .shopping-list-title {
     color: var(--white);
   }
+
+  .book-title {
+    color: var(--white);
+  }
+  .book-author {
+    color: #b4afaf;
+  }
 }
 
 .switch-theme-checkbox {
