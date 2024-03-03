@@ -48,9 +48,8 @@ addCategoriesList();
 let selectedCategory;
 
 // should delete later
-const categoriesListMain = document.querySelector('.categories-list-main');
 
-categoriesListMain.addEventListener('click', onCatListClick);
+refs.categoriesListMain.addEventListener('click', onCatListClick);
 
 async function onCatListClick(e) {
   e.preventDefault();
@@ -82,8 +81,7 @@ console.log(books)
 
 // ================modal================
 
-const booksList = document.querySelector('.all-categories-main');
-booksList.addEventListener('click', async e => {
+refs.categoriesMain.addEventListener('click', async e => {
   if (e.target === e.currentTarget) return;
 
   const bookId = e.target.closest('.book-item').dataset.id;

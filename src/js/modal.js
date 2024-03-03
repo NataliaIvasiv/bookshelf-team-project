@@ -24,8 +24,7 @@ export function pushMarkup(markup) {
 }
 
 export function hideModal() {
-  const modalBackdrop = document.querySelector('.modal-backdrop');
-  const modalCloseBtn = document.querySelector('.modal-close-btn');
+  
 
   document.addEventListener('keydown', event => {
     event.preventDefault();
@@ -34,33 +33,32 @@ export function hideModal() {
     }
   });
 
-  modalCloseBtn.addEventListener('click', event => {
+  refs.modalCloseBtn.addEventListener('click', event => {
     event.preventDefault();
     removeListeners();
   });
 
-  modalBackdrop.addEventListener('click', event => {
+  refs.modalBackdrop.addEventListener('click', event => {
     event.preventDefault();
-    if (event.target === modalBackdrop) {
+    if (event.target === refs.modalBackdrop) {
       removeListeners();
     }
   });
 }
 
 export function removeListeners() {
-  const modalBackdrop = document.querySelector('.modal-backdrop');
-  const modalCloseBtn = document.querySelector('.modal-close-btn');
+ 
 
 
-  modalBackdrop.parentNode.removeChild(modalBackdrop);
+  refs.modalBackdrop.parentNode.removeChild(refs.modalBackdrop);
 
   document.removeEventListener('keydown', e => {
     console.log('listener is remove');
   });
-  modalCloseBtn.removeEventListener('click', e => {
+  refs.modalCloseBtn.removeEventListener('click', e => {
     console.log('listener is remove');
   });
-  modalBackdrop.removeEventListener('click', e => {
+  refs.modalBackdrop.removeEventListener('click', e => {
     console.log('listener is remove');
   });
 }
