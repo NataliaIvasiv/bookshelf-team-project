@@ -1,8 +1,4 @@
-// add import of refs from refs.js
-
-// this needs to be forwarded to refs.js
-const checkbox = document.getElementById('switch-theme-checkbox');
-const savedTheme = localStorage.getItem('theme');
+import { refs } from "./refs";
 
 // function itself
 export function toggleTheme() {
@@ -12,11 +8,11 @@ export function toggleTheme() {
 }
 
 export function LocalStorageThemeCheck() {
-  if (savedTheme) {
-    document.body.classList.toggle('dark', savedTheme === 'dark');
+  if (refs.savedTheme) {
+    document.body.classList.toggle('dark', refs.savedTheme === 'dark');
   }
 }
 
 // event listener that has to be forwarded to main.js
-checkbox.addEventListener('change', toggleTheme);
+refs.checkbox.addEventListener('change', toggleTheme);
 LocalStorageThemeCheck()
