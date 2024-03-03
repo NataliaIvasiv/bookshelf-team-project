@@ -22,6 +22,9 @@ import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
 import {renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
+import './js/mob-menu'
+
+
 const booksApi = new booksAPI();
 
 // *******************header***************************
