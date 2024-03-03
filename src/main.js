@@ -55,10 +55,13 @@ async function onCatListClick(e) {
   refs.categoriesMain.innerHTML = '';
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
-  if (selectedCategory.textContent === 'All categories') {
+  if (selectedCategory.textContent === 'All categories')  {
     try {
       const popularBooks = await booksApi.getPopularBooks();
-      console.log(popularBooks);
+      console.log(popularBooks)
+      const popArray = popularBooks.map((book)=> book.books)
+      popArray.map((book)=>renderCategoriesMain(book));
+      console.log(popArray)
     } catch (err) {
       console.log('error');
     }
@@ -68,7 +71,7 @@ async function onCatListClick(e) {
   } catch (err) {
     console.log('error');
   }
-
+console.log(books)
   renderCategoriesMain(books);
 }
 
