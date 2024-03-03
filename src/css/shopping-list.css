@@ -344,3 +344,11 @@
     height: 34px;
   }
 }
+
+.shopping-list-dlt-book-btn-icon {
+  pointer-events: none;
+}
+
+.shopping-list-dlt-book-btn-icon > * {
+  pointer-events: none;
+}

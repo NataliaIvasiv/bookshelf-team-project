@@ -1,8 +1,24 @@
 import { refs } from './refs';
 import { createBookMarkup } from './shopping-list-template';
 
+function getBooksDataFromLocalStorage() {
+  const booksDataJSON = localStorage.getItem('shoppingList');
 
-export function createEmptyBackground() {
+  return booksDataJSON ? JSON.parse(booksDataJSON) : [];
+}
+
+function setShoppingListLocaleStorage(shoppingList) {
+  const booksJSON = JSON.stringify(shoppingList);
+  localStorage.setItem('shoppingList', booksJSON);
+}
+
+function removeBookFromLocalStorage(bookId) {
+  const currentState = getBooksDataFromLocalStorage();
+  const updatedState = currentState.filter(book => book._id !== bookId);
+  setShoppingListLocaleStorage(updatedState);
+}
+
+function shoppingListEmptyStateMarkup() {
   return `
       <div class="container  shopping-list-container">
         <div class="shopping-list-empty-container">
@@ -12,17 +28,37 @@ export function createEmptyBackground() {
       </div>`;
 }
 
-export function createShoppingListMarkup(arrayOfBooks) {
+function createShoppingListMarkup(arrayOfBooks) {
   if (arrayOfBooks.length === 0) {
-    return createEmptyBackground();
+    return shoppingListEmptyStateMarkup();
   }
 
   return arrayOfBooks.map(item => createBookMarkup(item)).join('');
 }
 
-if (refs.shoppingListContainer) {
+function renderShoppingListPage() {
+  const booksData = getBooksDataFromLocalStorage();
+
+  refs.shoppingListContainer.innerHTML = '';
   refs.shoppingListContainer.insertAdjacentHTML(
     'beforeend',
-    createShoppingListMarkup([])
+    createShoppingListMarkup(booksData)
   );
+
+  // Add listeners for delete buttons
+  const deleteButtons = refs.shoppingListContainer.querySelectorAll(
+    '.shopping-list-dlt-book-btn'
+  );
+
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      const bookId = event.target.attributes['data-id'].value;
+      removeBookFromLocalStorage(bookId);
+      renderShoppingListPage();
+    });
+  });
+}
+
+if (refs.shoppingListContainer) {
+  renderShoppingListPage();
 }
