@@ -1,18 +1,15 @@
-// add import of refs from refs.js
+import { refs } from "./refs";
 
-//  this should be forwarded to refs.js
-const listItems = document.querySelectorAll('.nav-list-item');
-const currentPage = window.location.href;
 let link;
 
 // function itself should be imported to main.js
 export function changeNavBgColor() {
   function removeAllCurrentPageClasses() {
-    listItems.forEach(item => item.classList.remove('current-page'));
+    refs.listItems.forEach(item => item.classList.remove('current-page'));
   }
 
   function setCurrentPageClass(link) {
-    if (link && link.href === currentPage) {
+    if (link && link.href === refs.currentPage) {
       link.closest('.nav-list-item').classList.add('current-page');
     }
   }
@@ -22,7 +19,7 @@ export function changeNavBgColor() {
     event.currentTarget.classList.add('current-page');
   }
 
-  listItems.forEach(item => {
+  refs.listItems.forEach(item => {
     link = item.querySelector('.nav-link');
     setCurrentPageClass(link);
 
@@ -33,27 +30,24 @@ export function changeNavBgColor() {
 // function should be called in main.js
 changeNavBgColor();
 
+
 // -----------------------------------------------
 
 // burger menu
 
-//  this should be forwarded to refs.js
-const menuOpenBtn = document.querySelector('.burger-menu-open-btn');
-const menuCloseBtn = document.querySelector('.burger-menu-close-btn');
-const burgerMenu = document.querySelector('.burger-menu');
 
 export function openMenu() {
-  menuOpenBtn.style.display = 'none';
-  menuCloseBtn.style.display = 'block';
-  burgerMenu.style.display = 'block';
+  refs.menuOpenBtn.style.display = 'none';
+  refs.menuCloseBtn.style.display = 'block';
+  refs.burgerMenu.style.display = 'block';
 }
  export function closeMenu() {
-  menuOpenBtn.style.display = 'block';
-  menuCloseBtn.style.display = 'none';
-  burgerMenu.style.display = 'none';
+  refs.menuOpenBtn.style.display = 'block';
+  refs.menuCloseBtn.style.display = 'none';
+  refs.burgerMenu.style.display = 'none';
 }
 
 // event listeners will be forwarded to main.js
-menuOpenBtn.addEventListener('click', openMenu);
-menuCloseBtn.addEventListener('click', closeMenu);
+refs.menuOpenBtn.addEventListener('click', openMenu);
+refs.menuCloseBtn.addEventListener('click', closeMenu);
 // end burger-menu

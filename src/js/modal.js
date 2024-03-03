@@ -1,3 +1,4 @@
+import { refs } from "./refs";
 export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-backdrop">
     <div class="modal-content-container">
@@ -14,17 +15,17 @@ export function createModalMarkup(FROM_SERVER) {
     <button type="submit" class="modal-btn"></button>
     </div>
     </div>
-    </div>`.join('\n');
+    </div>`;
   return markup;
+  // pushMarkup(markup);
 }
 
 export function pushMarkup(markup) {
-  document.body.insertAdjacentHTML('beforebegin', markup);
+  document.body.insertAdjacentHTML('beforeend', markup);
 }
 
 export function hideModal() {
-  const modalBackdrop = document.querySelector('.modal-backdrop');
-  const modalCloseBtn = document.querySelector('.modal-close-btn');
+  
 
   document.addEventListener('keydown', event => {
     event.preventDefault();
@@ -33,33 +34,32 @@ export function hideModal() {
     }
   });
 
-  modalCloseBtn.addEventListener('click', event => {
+  refs.modalCloseBtn.addEventListener('click', event => {
     event.preventDefault();
     removeListeners();
   });
 
-  modalBackdrop.addEventListener('click', event => {
+  refs.modalBackdrop.addEventListener('click', event => {
     event.preventDefault();
-    if (event.target === modalBackdrop) {
+    if (event.target === refs.modalBackdrop) {
       removeListeners();
     }
   });
-
-  function removeListeners() {
-    const modalBackdrop = document.querySelector('.modal-backdrop');
-
-    modalBackdrop.parentNode.removeChild(modalBackdrop);
-
-    document.removeEventListener('keydown', e => {
-      console.log('listener is remove');
-    });
-    modalCloseBtn.removeEventListener('click', e => {
-      console.log('listener is remove');
-    });
-    modalBackdrop.removeEventListener('click', e => {
-      console.log('listener is remove');
-    });
-  }
 }
 
+export function removeListeners() {
+ 
 
+
+  refs.modalBackdrop.parentNode.removeChild(refs.modalBackdrop);
+
+  document.removeEventListener('keydown', e => {
+    console.log('listener is remove');
+  });
+  refs.modalCloseBtn.removeEventListener('click', e => {
+    console.log('listener is remove');
+  });
+  refs.modalBackdrop.removeEventListener('click', e => {
+    console.log('listener is remove');
+  });
+}

@@ -7,11 +7,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { booksAPI } from './js/booksAPI';
-// import './js/category-render-function';
-// import { mainBooksTemplate } from './js/category-template';
-import './js/localStorageFunctions';
-import './js/modal';
-import './js/refs';
+import {
+  toggleShoppingList,
+  checkBookStatus,
+} from './js/localStorageFunctions';
+import { createModalMarkup, pushMarkup, hideModal } from './js/modal';
 import './js/themes';
 import './js/shopping-list-render-function';
 import './js/shopping-list-template';
@@ -19,77 +19,93 @@ import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
-import './js/popular-books-render'
+import './js/popular-books-render';
+import { refs } from './js/refs';
 const booksApi = new booksAPI();
+
+// *******************header***************************
 
 
 // categories-list**************************************
 
 async function addCategoriesList() {
-    let books;
-    try {
-        books = await booksApi.getCategoriesList();
-    } catch(err) {
-        console.log(err)
-        return
-    }
-    renderCategoriesList(books);
-    
+  let books;
+  try {
+    books = await booksApi.getCategoriesList();
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+  renderCategoriesList(books);
 }
 
 addCategoriesList();
+
 
 
 // all-categories*******************************************
 let selectedCategory;
 
 // should delete later
-const categoriesListMain = document.querySelector('.categories-list-main');
 
-categoriesListMain.addEventListener('click', onCatListClick);
+refs.categoriesListMain.addEventListener('click', onCatListClick);
 
 async function onCatListClick(e) {
-    e.preventDefault();
-    let books;
-    if (e.target === e.currentTarget) return;
-    selectedCategory = e.target.closest('li');
-    if (selectedCategory.textContent === 'All categories') {
-        try {
-            const popularBooks = await booksApi.getPopularBooks();
-            console.log(popularBooks)
-        }
-        catch (err) {
-            console.log('error');
-        }
-    }
+  e.preventDefault();
+  let books;
+  refs.categoriesMain.innerHTML = '';
+  if (e.target === e.currentTarget) return;
+  selectedCategory = e.target.closest('li');
+  if (selectedCategory.textContent === 'All categories')  {
     try {
-        books = await booksApi.getSelectedCategory(selectedCategory.textContent);
-    } catch(err) {
-        console.log('error');
+      const popularBooks = await booksApi.getPopularBooks();
+      console.log(popularBooks);
+      popularBooks.map((item) => {
+        
+        renderCategoriesMain(item.books)
+        return
+      })
+      // const popArray = popularBooks.map((book)=> book.books)
+      // popArray.map((book)=>renderCategoriesMain(book));
+      // console.log(popArray)
+    } catch (err) {
+      console.log('error');
     }
-   
-   renderCategoriesMain(books);
+  }
+  try {
+    books = await booksApi.getSelectedCategory(selectedCategory.textContent);
+  } catch (err) {
+    console.log('error');
+  }
+
+  renderCategoriesMain(books);
 }
+
 
 
 // ================modal================
 
-const booksList = document.querySelector('.categories-list-main');
-booksList.addEventListener('click', async e => {
+refs.categoriesMain.addEventListener('click', async e => {
   if (e.target === e.currentTarget) return;
-    const bookId = e.target.dataset.id;
-if (!bookId) return
+
+  const bookId = e.target.closest('.book-item').dataset.id;
+
+  // console.log(bookId);
   const book = await booksApi.getBookDetailedInfo(bookId);
+//   console.log(book);
+
   const markup = createModalMarkup(book);
   pushMarkup(markup);
 
-  const modalBtn = document.querySelector('.modal-btn');
-    checkBookStatus(book);
-    modalBtn.addEventListener('click', elem => {
-        elem.preventDefault()
-        toggleShoppingList(book);
-    })
+  checkBookStatus(book);
+  const modalButton = document.querySelector('.modal-btn');
+
+  modalButton.addEventListener('click', elem => {
+      elem.preventDefault();
+      
+    toggleShoppingList(book);
+    hideModal();
+  });
 });
-//hideModal()
 
 // =====================================

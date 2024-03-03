@@ -1,6 +1,6 @@
+import { refs } from './refs';
 import { createBookMarkup } from './shopping-list-template';
 
-const shoppingListContainer = document.querySelector('.shopping-list');
 
 export function createEmptyBackground() {
   return `
@@ -20,8 +20,8 @@ export function createShoppingListMarkup(arrayOfBooks) {
   return arrayOfBooks.map(item => createBookMarkup(item)).join('');
 }
 
-if (shoppingListContainer) {
-  shoppingListContainer.insertAdjacentHTML(
+if (refs.shoppingListContainer) {
+  refs.shoppingListContainer.insertAdjacentHTML(
     'beforeend',
     createShoppingListMarkup([])
   );
