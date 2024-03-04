@@ -454,6 +454,7 @@ body.dark {
   top: 24px;
   right: 24px;
   stroke: var(--black);
+  cursor: pointer;
 }
 
 .sign-input {
