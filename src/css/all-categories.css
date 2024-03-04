@@ -16,8 +16,12 @@
 }
 .book-item-container{
   
-          margin-bottom: 40px;
-        }
+  margin-bottom: 40px;
+}
+
+.book-card-hover-text{
+  visibility: hidden;
+}
 
 .book-details{
   width: 335px;
@@ -43,6 +47,10 @@
 .book-card{
   width: 218px;
   height: 316px;
+}
+
+.book-card-hover-text{
+  visibility: hidden;
 }
 
 .book-details{
@@ -111,6 +119,7 @@
     box-sizing: border-box; 
     opacity: 0; 
     transition: opacity 0.3s; 
+    visibility: visible;
     }
 
     
