@@ -96,9 +96,9 @@ refs.categoriesMain.addEventListener('click', async e => {
 
   const bookId = e.target.closest('.book-item').dataset.id;
 
-  // console.log(bookId);
+
   const book = await booksApi.getBookDetailedInfo(bookId);
-//   console.log(book);
+
 
   const markup = createModalMarkup(book);
   pushMarkup(markup);

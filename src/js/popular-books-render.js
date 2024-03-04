@@ -1,4 +1,4 @@
-import { renderCategoriesMain } from "./category-render-function";
+import { bookTitle, renderCategoriesMain } from "./category-render-function";
 import { booksAPI } from './booksAPI'
 import {refs} from './refs'
 import './izitoast';
@@ -12,7 +12,8 @@ if (selectedCategory.textContent === 'All categories' || selectedCategory === 'A
   try {
       const popularBooks = await booksApi.getPopularBooks();
       popularBooks.map((item) => {
-          popularTitleRender(item);
+        popularTitleRender(item);
+        addSeeButton();
         return
       })
     } catch (err) {
@@ -36,3 +37,11 @@ export function addPopularMainTitle(selectedCategory) {
   const markupTitle = `${selectedCategory}`;
   refs.categoriesMainTitle.insertAdjacentHTML('afterbegin', markupTitle )
 }
+
+function addSeeButton() {
+  const buttonMarkup = `<button class='see-more-btn'>See more</button>`;
+  refs.categoriesMain.insertAdjacentHTML('beforeend', buttonMarkup)
+}
+
+// const seeMoreButton = document.querySelector('.see-more-btn')
+// seeMoreButton.addEventListener('click', onSeeMoreButton)
