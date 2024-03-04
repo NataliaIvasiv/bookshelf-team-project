@@ -18,6 +18,7 @@ categoriesListMain: document.querySelector('.categories-list-main'),
   popularTitle: document.querySelector('.popular-title'),
   categoriesMain: document.querySelector('.all-categories-main'),
   categoriesMainTitle: document.querySelector('.title-book-section'),
+  allCategoriesContainer: document.querySelector('.all-categories-container'),
   
   // support
 supportList: document.querySelector('.support__list-js'),

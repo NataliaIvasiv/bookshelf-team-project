@@ -5,9 +5,9 @@ import {refs} from './refs'
 const booksApi = new booksAPI();
 export async function renderPopularBooks(selectedCategory){
 if (selectedCategory.textContent === 'All categories' || selectedCategory === 'All categories')  {
-    try {
+  addPopularMainTitle('Best Sellers Books');  
+  try {
       const popularBooks = await booksApi.getPopularBooks();
-      console.log(popularBooks);
       popularBooks.map((item) => {
           popularTitleRender(item);
         return
@@ -26,4 +26,9 @@ export function popularTitleRender(item) {
     refs.categoriesMain.insertAdjacentHTML('beforeend', popularTitleTemplate(item))
         renderCategoriesMain(item.books)
 
+}
+
+export function addPopularMainTitle(selectedCategory) {
+  const markupTitle = `${selectedCategory}`;
+  refs.categoriesMainTitle.insertAdjacentHTML('afterbegin', markupTitle )
 }

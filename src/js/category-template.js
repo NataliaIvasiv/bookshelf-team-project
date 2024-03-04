@@ -20,6 +20,6 @@ export function mainBooksTemplate(books) {
       return books.map(mainBookTemplate).join('');
   }
   
-//export function markupMainTitleTemplate(selectedCategory) {
-    //return `${selectedCategory}`
-//}
+// export function mainBookTitleTemplate(selectedCategory) {
+//     return `${selectedCategory.textContent}`
+// }

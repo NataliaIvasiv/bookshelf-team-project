@@ -19,8 +19,8 @@ import './js/shopping-list-template';
 import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
-import { renderCategoriesMain } from './js/category-render-function';
-import {renderPopularBooks} from './js/popular-books-render';
+import { bookTitle, renderCategoriesMain } from './js/category-render-function';
+import {addPopularMainTitle, renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
 import './js/mob-menu';
 import './js/modal-sign-up'
@@ -59,9 +59,10 @@ async function onCatListClick(e) {
   e.preventDefault();
   let books;
   refs.categoriesMain.innerHTML = '';
+  refs.categoriesMainTitle.innerHTML = '';
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
-
+  
   renderPopularBooks(selectedCategory);
  
   try {
@@ -69,8 +70,8 @@ async function onCatListClick(e) {
   } catch (err) {
     console.log('error');
   }
-
-  renderCategoriesMain(books);
+  bookTitle(selectedCategory);
+  renderCategoriesMain(books, selectedCategory);
 }
 
 
