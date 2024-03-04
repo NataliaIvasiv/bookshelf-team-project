@@ -25,17 +25,17 @@ export function createBookMarkup(bookData) {
           }</p>
           <p class="shopping-list-book-author">${author}</p>
           <div class="shopping-list-book-links">
-            <a class="test-link" href="${amazon.url}">
-              <img width="32" height="11" class="shopping-list-amazon" src="../img/amazon-s.png" alt="${
+          <a class="test-link" href="${amazon.url}" target="_blank">
+              <img width="32" height="11" class="shopping-list-amazon" src="../img/amazon-l.png" alt="${
                 amazon.name
-              }"/>             
-            </a>
-            <a class="test-link" href="${apple_books.url}">
-              <img width="16" height="16" class="shopping-list-apple" src="../img/apple-s.png" alt="${
+              }" />
+          </a>
+          <a class="test-link" href="${apple_books.url}" target="_blank">
+              <img width="16" height="16" class="shopping-list-apple" src="../img/apple-l.png" alt="${
                 apple_books.name
-              }"/>             
-            </a>
-          </div>
+              }" />
+          </a>
+      </div>      
           <button data-id="${bookId}" class="shopping-list-dlt-book-btn" >         
             <svg class="shopping-list-dlt-book-btn-icon" width="16" height="16"><use href="../img/symbol-defs.svg#icon-trash1"></use></svg>
           </button>
