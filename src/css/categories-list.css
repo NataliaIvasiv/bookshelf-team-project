@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.categories-list-item:active {
+.categories-list-active {
   text-transform: uppercase;
   color: var(--violet);
   font-weight: 700;

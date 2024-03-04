@@ -48,7 +48,6 @@ async function addCategoriesList() {
 addCategoriesList();
 
 
-
 // all-categories*******************************************
 let selectedCategory;
 
@@ -64,12 +63,12 @@ async function onCatListClick(e) {
 
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
-  
+  highlightSelectedCategory(selectedCategory);
   renderPopularBooks(selectedCategory);
+
  
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
-    console.log(books);
     
   } catch (err) {
     console.log('error');
@@ -80,7 +79,16 @@ async function onCatListClick(e) {
 }
 
 
-
+function highlightSelectedCategory(selectedCategory) {
+  const items = document.querySelectorAll('.categories-list-item');
+  console.log(items);
+  for (const item of items) {
+  if (item.textContent === selectedCategory.textContent)
+      item.classList.add('categories-list-active');
+    else
+      item.classList.remove('categories-list-active');
+}
+}
 // ================modal================
 
 refs.categoriesMain.addEventListener('click', async e => {
