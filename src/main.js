@@ -22,7 +22,8 @@ import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
 import {renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
-import './js/mob-menu'
+import './js/mob-menu';
+import './js/modal-sign-up'
 
 
 const booksApi = new booksAPI();
@@ -51,15 +52,16 @@ addCategoriesList();
 let selectedCategory;
 
 // should delete later
+window.addEventListener("load", renderPopularBooks('All categories'));
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
-window.addEventListener("load", renderPopularBooks('All categories'));
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
   refs.categoriesMain.innerHTML = '';
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
+
   renderPopularBooks(selectedCategory);
  
   try {
