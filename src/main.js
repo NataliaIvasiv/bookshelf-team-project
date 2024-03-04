@@ -1,5 +1,4 @@
 import axios from 'axios';
-import iziToast from 'izitoast';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -23,7 +22,9 @@ import { bookTitle, renderCategoriesMain } from './js/category-render-function';
 import {addPopularMainTitle, renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
 import './js/mob-menu';
-import './js/modal-sign-up'
+import './js/modal-sign-up';
+import './js/izitoast';
+import { showError } from './js/izitoast';
 
 
 const booksApi = new booksAPI();
@@ -51,14 +52,13 @@ addCategoriesList();
 // all-categories*******************************************
 let selectedCategory;
 
-// should delete later
 window.addEventListener("load", renderPopularBooks('All categories'));
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
-  
+
   refs.categoriesMain.innerHTML = '';
   refs.categoriesMainTitle.innerHTML = '';
 
@@ -69,10 +69,13 @@ async function onCatListClick(e) {
  
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
+    console.log(books);
+    
   } catch (err) {
     console.log('error');
+    emptyPage();
   }
-  bookTitle(selectedCategory);
+    bookTitle(selectedCategory);
   renderCategoriesMain(books, selectedCategory);
 }
 

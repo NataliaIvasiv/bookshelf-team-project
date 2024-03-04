@@ -1,8 +1,11 @@
 import { renderCategoriesMain } from "./category-render-function";
 import { booksAPI } from './booksAPI'
 import {refs} from './refs'
+import './izitoast';
+import { emptyPage } from "./izitoast";
 
 const booksApi = new booksAPI();
+
 export async function renderPopularBooks(selectedCategory){
 if (selectedCategory.textContent === 'All categories' || selectedCategory === 'All categories')  {
   addPopularMainTitle('Best Sellers Books');  
@@ -13,7 +16,8 @@ if (selectedCategory.textContent === 'All categories' || selectedCategory === 'A
         return
       })
     } catch (err) {
-      console.log('error');
+    console.log('error');
+    emptyPage();
     }
     }
 }
