@@ -9,7 +9,6 @@ iziToast.error({
 })`;
 }
 
-
 function emptyPage(){
     return `   
 iziToast.error({
