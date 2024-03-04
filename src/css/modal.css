@@ -11,6 +11,7 @@
   z-index: 999;
 }
 .modal-content-container {
+   position: relative;
   padding: 40px 24px;
   background: #fff;
   border: 2px solid #111;

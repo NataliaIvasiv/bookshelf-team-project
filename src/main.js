@@ -96,8 +96,9 @@ refs.categoriesMain.addEventListener('click', async e => {
       elem.preventDefault();
       
     toggleShoppingList(book);
-    hideModal();
   });
+    hideModal();
+
 });
 
 // =====================================
