@@ -32,4 +32,24 @@ upBtn: document.querySelector('.swiper-button-next'),
   //shoplist
 shoppingListContainer: document.querySelector('.shopping-list'),
 
+// modal-sign-up
+
+openModalBtn : document.getElementById("openModalBtn"),
+closeModalBtn : document.querySelector(".closeModalBtn"),
+signInOption : document.querySelector(".signInOption"),
+signUpOption : document.querySelector(".signUpOption"),
+signUpBtn : document.querySelector(".signUpBtn"),
+signInBtn : document.querySelector(".signInBtn"),
+signUpForm : document.getElementById("signUpForm"),
+signInForm : document.getElementById("signInForm"),
+modal : document.getElementById("signupModal"),
+modalwrapper : document.querySelector('.modal-sign-container'),
+mobileLoginBtn : document.querySelector('.mobile-login-btn'),
+
+
+// mob-menu 
+
+homeBtn : document.querySelector('.burger-link-home'),
+shoppingBtn : document.querySelector('.burger-link-shopping'),
+
 };
