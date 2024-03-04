@@ -2,7 +2,7 @@ import { refs } from './refs';
 export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-backdrop">
     <div class="modal-content-container">
-    <button type="submit" class="modal-close-btn"><img src="../img/symbol-defs.svg#icon-x-close" /></button>
+    <button type="submit" class="modal-close-btn"><img src="../img/symbol-defs.svg#icon-x-close" width=24 heigh=24/></button>
     <img src="${FROM_SERVER.book_image}" class="modal-book-image" />
     <div class="modal-book-info">
     <h3 class="modal-title">${FROM_SERVER.title}</h3>
