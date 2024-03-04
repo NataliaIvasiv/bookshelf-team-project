@@ -24,7 +24,7 @@ import { refs } from './js/refs';
 import './js/mob-menu';
 import './js/modal-sign-up';
 import './js/izitoast';
-import { showError } from './js/izitoast';
+import { emptyPage } from './js/izitoast';
 
 
 const booksApi = new booksAPI();
@@ -81,7 +81,6 @@ async function onCatListClick(e) {
 
 function highlightSelectedCategory(selectedCategory) {
   const items = document.querySelectorAll('.categories-list-item');
-  console.log(items);
   for (const item of items) {
   if (item.textContent === selectedCategory.textContent)
       item.classList.add('categories-list-active');

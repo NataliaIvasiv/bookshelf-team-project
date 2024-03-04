@@ -70,5 +70,5 @@ export function removeListeners() {
         console.log('listener is remove');
       });
   }
-console.log(modalCloseBtn);
+
 }
