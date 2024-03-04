@@ -8,8 +8,10 @@ export function renderCategoriesMain(books) {
   }
   
 export function bookTitle(selectedCategory) {
-  const markupBookTitle = `${selectedCategory.textContent}`;
-  refs.categoriesMainTitle.insertAdjacentHTML('beforeend', markupBookTitle)
+  if (selectedCategory.textContent !== 'All categories') {
+    const markupBookTitle = `${selectedCategory.textContent}`;
+    refs.categoriesMainTitle.insertAdjacentHTML('beforeend', markupBookTitle)
+  }
 }
 
 function applyLastWordStyle() {

@@ -58,8 +58,10 @@ refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
+  
   refs.categoriesMain.innerHTML = '';
   refs.categoriesMainTitle.innerHTML = '';
+
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
   

@@ -23,6 +23,7 @@
         width: 335px;
         height: 485px;
         border-radius: 8px;
+        cursor: pointer;
         }
 .book-item:hover{
   transform: scale(1.04);
