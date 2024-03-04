@@ -12,7 +12,6 @@ export function bookTitle(selectedCategory) {
   refs.categoriesMainTitle.insertAdjacentHTML('beforeend', markupBookTitle)
 }
 
-
 function applyLastWordStyle() {
   const elements = document.querySelectorAll('.title-book-section');
   elements.forEach(function(element) {
