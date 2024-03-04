@@ -156,3 +156,9 @@
      width: 180px; 
     } 
     }
+    .popular-title{
+      text-transform: uppercase;
+    }
+    .li-title{
+      width: 100%;
+    }

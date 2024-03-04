@@ -1,5 +1,5 @@
 import { refs } from "./refs";
-
+import iziToast from "izitoast";
 let link;
 
 // function itself should be imported to main.js
@@ -51,3 +51,78 @@ export function openMenu() {
 refs.menuOpenBtn.addEventListener('click', openMenu);
 refs.menuCloseBtn.addEventListener('click', closeMenu);
 // end burger-menu
+
+
+
+// modal window functionality
+
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModalBtn = document.querySelector(".closeModalBtn");
+const signInOption = document.querySelector(".signInOption");
+const signUpOption = document.querySelector(".signUpOption");
+const signUpBtn = document.querySelector(".signUpBtn");
+const signInBtn = document.querySelector(".signInBtn");
+const signUpForm = document.getElementById("signUpForm");
+const signInForm = document.getElementById("signInForm");
+const modal = document.getElementById("signupModal");
+const modalwrapper = document.querySelector('.modal-sign-container');
+
+
+export function openModal() {
+  modal.style.display = "block";
+  modalwrapper.style.display = 'flex'
+  showSignUpForm();
+}
+
+export function closeModal() {
+  modal.style.display = "none";
+  modalwrapper.style.display = 'none'
+}
+
+export function showSignInForm() {
+  signUpForm.style.display = "none";
+  signInForm.style.display = "block";
+  signInOption.classList.add("active");
+  signUpOption.classList.remove("active");
+}
+
+export function showSignUpForm() {
+  signUpForm.style.display = "block";
+  signInForm.style.display = "none";
+  signUpOption.classList.add("active");
+  signInOption.classList.remove("active");
+}
+
+export function signUp() {
+  iziToast.show({
+    title: "Success",
+    message: "Sign up successful!",
+    theme: "dark",
+    icon: "icon-person",
+    color: "green",
+    position: "topRight",
+    timeout: 5000,
+  });
+  closeModal();
+}
+
+export function signIn() {
+  iziToast.show({
+    title: "Success",
+    message: "Sign in successful!",
+    theme: "dark",
+    icon: "icon-person",
+    color: "green",
+    position: "topRight",
+    timeout: 5000,
+  });
+  closeModal();
+}
+
+
+openModalBtn.addEventListener("click", openModal);
+closeModalBtn.addEventListener("click", closeModal);
+signInOption.addEventListener("click", showSignInForm);
+signUpOption.addEventListener("click", showSignUpForm);
+signUpBtn.addEventListener("click", signUp);
+signInBtn.addEventListener("click", signIn);

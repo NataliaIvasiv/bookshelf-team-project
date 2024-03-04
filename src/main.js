@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+
 import { booksAPI } from './js/booksAPI';
 import {
   toggleShoppingList,
@@ -19,8 +20,12 @@ import './js/header';
 import './js/categories-list-render';
 import { renderCategoriesList } from './js/categories-list-render';
 import { renderCategoriesMain } from './js/category-render-function';
-import './js/popular-books-render';
+import {renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
+import './js/mob-menu';
+import './js/modal-sign-up'
+
+
 const booksApi = new booksAPI();
 
 // *******************header***************************
@@ -47,31 +52,18 @@ addCategoriesList();
 let selectedCategory;
 
 // should delete later
+window.addEventListener("load", renderPopularBooks('All categories'));
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
-
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
   refs.categoriesMain.innerHTML = '';
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
-  if (selectedCategory.textContent === 'All categories')  {
-    try {
-      const popularBooks = await booksApi.getPopularBooks();
-      console.log(popularBooks);
-      popularBooks.map((item) => {
-        
-        renderCategoriesMain(item.books)
-        return
-      })
-      // const popArray = popularBooks.map((book)=> book.books)
-      // popArray.map((book)=>renderCategoriesMain(book));
-      // console.log(popArray)
-    } catch (err) {
-      console.log('error');
-    }
-  }
+
+  renderPopularBooks(selectedCategory);
+ 
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
   } catch (err) {
