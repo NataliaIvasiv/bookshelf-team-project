@@ -5,6 +5,19 @@
   .support-container{
     margin-bottom: 40px;
   }
+
+  
+
+  .title-book-section{
+    font-family: DM Sans;
+    font-size: 48px;
+    font-weight: 700;
+  margin-bottom: 40px;
+  } 
+
+  .last-word{
+    color: rgba(79, 46, 232, 1);
+  }
        /*all books  **********************************/
 .book-card {
         width: 335px;
