@@ -10,23 +10,24 @@
   border-radius: 16px;
   box-shadow: 0px 10px 10px #f5f5f71a;
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+position: relative;
 }
 
-.support__wrap-title {
+.support-title-wrapper {
   margin-bottom: 40px;
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-.support__title {
+.support-main-title {
   font-weight: 700;
   font-size: 28px;
   line-height: calc(32 / 28);
   color: #fff;
 }
 
-.support__emblem {
+.support-emblem {
   fill: #fff;
 }
 
@@ -37,12 +38,12 @@
   overflow: hidden;
 }
 
-.support__list-js {
+.support-list-js {
   display: flex;
   flex-direction: column;
 }
 
-.support__list-item {
+.support-list-item {
   display: flex;
   gap: 16px;
   align-items: center;
@@ -52,13 +53,17 @@
   color: #fff;
 }
 
-.support__link img {
+.support-link img {
   height: 32px;
   width: auto;
   filter: grayscale(100%) invert(50%) brightness(200%);
 }
-
-.support__btn {
+.support .support-btn{
+  position: static;
+  bottom: 24px;
+  transform: rotate(90deg);
+}
+.support-btn {
   width: 32px;
   height: 32px;
   margin: 0 auto;
@@ -69,7 +74,7 @@
 
 }
 
-.support__btn-icon {
+.support-btn-icon {
   fill: #4f2ee8;
 }
 
@@ -79,11 +84,11 @@
   width: 335px;
   height: 472px;
   padding: 24px 40px 14px;}
-    .swiper {
+    .swiper{
         height: 292px;
         margin-bottom: 32px;
     }
-    .support__btn{
+    .support-btn{
       width: 38px;
         height: 38px;
     }

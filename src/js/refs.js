@@ -21,7 +21,7 @@ categoriesListMain: document.querySelector('.categories-list-main'),
   allCategoriesContainer: document.querySelector('.all-categories-container'),
   
   // support
-supportList: document.querySelector('.support__list-js'),
+supportList: document.querySelector('.support-list-js'),
 upBtn: document.querySelector('.swiper-button-next'),
 
   //modal 

@@ -1,3 +1,4 @@
+import { refs} from './refs'
 export const supportArray = [
   {
     title: 'Save the Children',
@@ -64,24 +65,31 @@ import 'swiper/css/pagination';
 
 refs.upBtn.addEventListener('click', onLater);
 
-function findImage(name, anArrayImage) {return anArrayImage.find(found => found.title === name);}
+// function findImage(name, anArrayImage) {
+//   return anArrayImage.find(found => found.title === name);
+// }
 
-function renderMarkup(array) {refs.supportList.insertAdjacentHTML("beforeend", array);}
+function renderMarkup(array) {
+  refs.supportList.insertAdjacentHTML("beforeend", array);
+  
+}
 
-const markup = supportArray.map(({ title, url }, index) => {
+const markup = supportArray
+  .map(({ title, url, img, img2 }, index) => {
   const number = (index + 1).toString().padStart(2, '0');
-  const imgfinded = findImage(title, supportArray);
-  const images = imgfinded.img;
+  // const imgfinded = findImage(title, supportArray);
+  // const img = imgfinded.img;
 
-  return `<div class="support__item swiper-slide">
-  <a href="${url}" class="support__link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
-  <p class="support__number">${number}</p>
-  <img class="support__img" src="${img}" data-source="${img2}" alt="${title}" />
+  return `<div class="support-list-item swiper-slide">
+  <a href="${url}" class="support-link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
+  <p class="support-number">${number}</p>
+  <img class="support-img" src="${img}" data-source="${img2}" alt="${title}" />
   </a></div>`;
   })
   .join('');
+console.log(markup)
+renderMarkup(markup);
 
-  renderMarkup(markup);
 
 const swiper = new Swiper('.swiper', {
   direction: 'vertical',
