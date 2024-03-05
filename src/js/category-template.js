@@ -17,7 +17,8 @@
            } 
   
 export function mainBooksTemplate(books) {
-      return books.map(mainBookTemplate).join('');
+    const markup = books.map(mainBookTemplate).join('');
+    return `<ul class='all-categories-main'>${markup}</ul>`
   }
   
 

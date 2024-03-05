@@ -32,15 +32,19 @@ const booksApi = new booksAPI();
 
 let selectedCategory;
 
-window.addEventListener("load", homeOnLoad);
+window.addEventListener("load", async () => {
+  await addCategoriesList();
+  await renderPopularBooks('All categories');
+  
+});
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
 
-  refs.categoriesMain.innerHTML = '';
-  refs.categoriesMainTitle.innerHTML = '';
+  refs.allCategoriesContainer.innerHTML = '';
+
 
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
@@ -71,8 +75,9 @@ function highlightSelectedCategory(selectedCategory) {
 }
 // ================modal================
 
-refs.categoriesMain.addEventListener('click', async e => {
-  if (e.target === e.currentTarget) return;
+
+refs.allCategoriesContainer.addEventListener('click', async e => {
+  if (e.target.nodeName ==  'BUTTON' || e.target.nodeName == 'H2') return;
 
   const bookId = e.target.closest('.book-item').dataset.id;
 

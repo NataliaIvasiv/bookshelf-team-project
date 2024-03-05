@@ -2,19 +2,22 @@ import { mainBooksTemplate } from "./category-template";
 import { refs } from './refs'
 
 export function renderCategoriesMain(books) {
-  applyLastWordStyle();
     const markupMain = mainBooksTemplate(books);
-    refs.categoriesMain.insertAdjacentHTML('beforeend', markupMain);
+    refs.allCategoriesContainer.insertAdjacentHTML('beforeend', markupMain);
   }
   
 export function bookTitle(selectedCategory) {
   if (selectedCategory.textContent !== 'All categories') {
-    const markupBookTitle = `${selectedCategory.textContent}`;
-    refs.categoriesMainTitle.insertAdjacentHTML('beforeend', markupBookTitle)
+    const markupBookTitle = `<h2 class="title-book-section">${selectedCategory.textContent}</h2>`;
+    refs.allCategoriesContainer.insertAdjacentHTML('beforeend', markupBookTitle)
+    console.log(markupBookTitle);
+  
+    applyLastWordStyle();
+    console.log('ok')
   }
 }
 
-function applyLastWordStyle() {
+export function applyLastWordStyle() {
   const elements = document.querySelectorAll('.title-book-section');
   elements.forEach(function(element) {
     const text = element.textContent.trim();
