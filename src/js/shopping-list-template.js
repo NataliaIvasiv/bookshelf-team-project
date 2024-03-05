@@ -26,12 +26,12 @@ export function createBookMarkup(bookData) {
           <p class="shopping-list-book-author">${author}</p>
           <div class="shopping-list-book-links">
           <a class="test-link" href="${amazon.url}" target="_blank">
-              <img width="32" height="11" class="shopping-list-amazon" src="../img/amazon-l.png" alt="${
+              <img width="32" height="11" class="shopping-list-amazon" src="./img/amazon-l.png" alt="${
                 amazon.name
               }" />
           </a>
           <a class="test-link" href="${apple_books.url}" target="_blank">
-              <img width="16" height="16" class="shopping-list-apple" src="../img/apple-l.png" alt="${
+              <img width="16" height="16" class="shopping-list-apple" src="./img/apple-l.png" alt="${
                 apple_books.name
               }" />
           </a>
