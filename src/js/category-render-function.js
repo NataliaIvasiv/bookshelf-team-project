@@ -9,11 +9,9 @@ export function renderCategoriesMain(books) {
 export function bookTitle(selectedCategory) {
   if (selectedCategory.textContent !== 'All categories') {
     const markupBookTitle = `<h2 class="title-book-section">${selectedCategory.textContent}</h2>`;
-    refs.allCategoriesContainer.insertAdjacentHTML('beforeend', markupBookTitle)
-    console.log(markupBookTitle);
+    refs.allCategoriesContainer.insertAdjacentHTML('beforeend', markupBookTitle);
   
     applyLastWordStyle();
-    console.log('ok')
   }
 }
 
