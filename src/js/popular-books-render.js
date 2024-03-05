@@ -6,6 +6,8 @@ import { emptyPage } from "./izitoast";
 
 const booksApi = new booksAPI();
 
+//render ALL CATEGORY
+
 export async function renderPopularBooks(selectedCategory){
 if (selectedCategory.textContent === 'All categories' || selectedCategory === 'All categories')  {
   addPopularMainTitle('Best Sellers Books');  
@@ -23,6 +25,8 @@ if (selectedCategory.textContent === 'All categories' || selectedCategory === 'A
     }
 }
     
+
+
 export function popularTitleTemplate (item) {
     return `<li class="li-title"><h3 class="book-author popular-title">${item.list_name}</h3></li>`;
 }

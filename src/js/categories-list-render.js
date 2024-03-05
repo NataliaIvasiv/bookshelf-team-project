@@ -4,6 +4,7 @@ import { renderPopularBooks } from './popular-books-render';
 const categoriesList = document.querySelector('.categories-list-main')
 const booksApi = new booksAPI();
 
+
 export function categoryListTemplate(books) {
     return books
         .map((book) => { return `<li class='categories-list-item'><a href="">${book.list_name}</a></li>` })
@@ -15,6 +16,8 @@ export function renderCategoriesList(books) {
     categoriesList.insertAdjacentHTML('beforeend', markup);
 }
 
+
+
 export async function addCategoriesList() {
   let books;
   try {
@@ -25,6 +28,10 @@ export async function addCategoriesList() {
   }
   renderCategoriesList(books);
 }
+
+
+// render categories-list and all category (popular)
+
 export function homeOnLoad() {
     addCategoriesList();
     renderPopularBooks('All categories')

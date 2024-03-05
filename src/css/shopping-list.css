@@ -1,6 +1,13 @@
 .shopping-list-body {
   display: block;
 }
+.shop-support{
+  display: none;
+}
+.shopping-list-flex{
+  display: flex;
+  flex-direction: row;
+}
 
 .shopping-list-empty-container {
   margin: 0 auto;
@@ -289,7 +296,9 @@ body.dark .shopping-list-apple:hover {
   .shopping-list-body {
     display: grid;
   }
-
+.shop-support{
+  display: inline;
+}
   .shopping-list-container {
     min-width: 996px;
     min-height: 845px;
