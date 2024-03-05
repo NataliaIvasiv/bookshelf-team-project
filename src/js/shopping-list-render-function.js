@@ -23,7 +23,7 @@ function shoppingListEmptyStateMarkup() {
       <div class="container  shopping-list-container">
         <div class="shopping-list-empty-container">
           <p class="shopping-list-empty-paragraph">This page is empty, add some books and proceed to order.</p>
-          <img class="shopping-list-empty-img" src="../img/empty-sl.png" alt="Books in empty section"/>
+          <img class="shopping-list-empty-img" src="./img/empty-sl.png" alt="Books in empty section"/>
         </div>
       </div>`;
 }
