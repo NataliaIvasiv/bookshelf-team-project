@@ -1,3 +1,10 @@
+import amazon1x from '../img/amazon-1x.png';
+import amazon2x from '../img/amazon-2x.png';
+import amazon3x from '../img/amazon-3x.png';
+import book1x from '../img/book-1x.png';
+import book2x from '../img/book-2x.png';
+import book3x from '../img/book-3x.png';
+
 export function createBookMarkup(bookData) {
   const {
     _id: bookId,
@@ -26,14 +33,17 @@ export function createBookMarkup(bookData) {
           <p class="shopping-list-book-author">${author}</p>
           <div class="shopping-list-book-links">
           <a class="test-link" href="${amazon.url}" target="_blank">
-              <img width="32" height="11" class="shopping-list-amazon" src="./img/amazon-l.png" alt="${
-                amazon.name
-              }" />
+              <img width="32" height="11" class="shopping-list-amazon" srcset="
+              ${amazon1x} 1x,
+              ${amazon2x} 2x,
+              ${amazon3x} 3x
+            " src="${amazon1x}" alt="${amazon.name}" />
           </a>
           <a class="test-link" href="${apple_books.url}" target="_blank">
-              <img width="16" height="16" class="shopping-list-apple" src="./img/apple-l.png" alt="${
-                apple_books.name
-              }" />
+              <img width="16" height="16" class="shopping-list-apple" srcset="
+              ${book1x} 1x,
+              ${book2x} 2x,
+              ${book3x} 3x" src="${book1x}" alt="${apple_books.name}" />
           </a>
       </div>      
           <button data-id="${bookId}" class="shopping-list-dlt-book-btn" >         
