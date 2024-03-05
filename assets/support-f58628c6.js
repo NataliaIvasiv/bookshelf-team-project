@@ -46,4 +46,4 @@ import{i as m,S as B}from"./vendor-e2ce0d38.js";(function(){const s=document.cre
   <p class="support-number">${i}</p>
   <img class="support-img" src="${r}" data-source="${o}" alt="${t}" />
   </a></div>`}).join("");P(z);const X=new B(".swiper",{direction:"vertical",loop:!0,slidesPerView:4,spaceBetween:20,breakpoints:{768:{slidesPerView:6,spaceBetween:20}}});function K(){X.slideNext(200)}export{e as r};
-//# sourceMappingURL=support-03e6a105.js.map
+//# sourceMappingURL=support-f58628c6.js.map
