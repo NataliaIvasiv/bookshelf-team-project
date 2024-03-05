@@ -37,6 +37,9 @@
   font-size: 18px;
   width: 24px;
   height: 24px;
+  border: none;
+  background: transparent;
+  stroke: var(--black);
 }
 
 .modal-btn {
@@ -60,9 +63,9 @@
   align-items: baseline;
 }
 
- .modal-book-info {
-    margin-bottom: 20px;
-  }
+.modal-book-info {
+  margin-bottom: 20px;
+}
 
 @media screen and (min-width: 768px) {
   .modal-content-container {
