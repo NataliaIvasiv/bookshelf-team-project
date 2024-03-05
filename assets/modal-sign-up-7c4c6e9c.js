@@ -13,10 +13,10 @@ import{i as u}from"./vendor-fe89f55d.js";(function(){const s=document.createElem
           <p class="shopping-list-book-author">${l}</p>
           <div class="shopping-list-book-links">
           <a class="test-link" href="${a.url}" target="_blank">
-              <img width="32" height="11" class="shopping-list-amazon" src="../img/amazon-l.png" alt="${a.name}" />
+              <img width="32" height="11" class="shopping-list-amazon" src="./img/amazon-l.png" alt="${a.name}" />
           </a>
           <a class="test-link" href="${p.url}" target="_blank">
-              <img width="16" height="16" class="shopping-list-apple" src="../img/apple-l.png" alt="${p.name}" />
+              <img width="16" height="16" class="shopping-list-apple" src="./img/apple-l.png" alt="${p.name}" />
           </a>
       </div>      
           <button data-id="${s}" class="shopping-list-dlt-book-btn" >         
@@ -28,7 +28,7 @@ import{i as u}from"./vendor-fe89f55d.js";(function(){const s=document.createElem
       <div class="container  shopping-list-container">
         <div class="shopping-list-empty-container">
           <p class="shopping-list-empty-paragraph">This page is empty, add some books and proceed to order.</p>
-          <img class="shopping-list-empty-img" src="../img/empty-sl.png" alt="Books in empty section"/>
+          <img class="shopping-list-empty-img" src="./img/empty-sl.png" alt="Books in empty section"/>
         </div>
       </div>`}function B(n){return n.length===0?v():n.map(s=>k(s)).join("")}function m(){const n=g();e.shoppingListContainer.innerHTML="",e.shoppingListContainer.insertAdjacentHTML("beforeend",B(n)),e.shoppingListContainer.querySelectorAll(".shopping-list-dlt-book-btn").forEach(r=>{r.addEventListener("click",t=>{const o=t.target.attributes["data-id"].value;S(o),m()})})}e.shoppingListContainer&&m();let d;function I(){function n(){e.listItems.forEach(t=>t.classList.remove("current-page"))}function s(t){t&&t.href===e.currentPage&&t.closest(".nav-list-item").classList.add("current-page")}function r(t){n(),t.currentTarget.classList.add("current-page")}e.listItems.forEach(t=>{d=t.querySelector(".nav-link"),s(d),t.addEventListener("click",r)})}I();function O(){e.homeBtn.classList.add("current"),e.shoppingBtn.classList.remove("current")}function w(){e.homeBtn.classList.remove("current"),e.shoppingBtn.classList.add("current")}e.homeBtn.addEventListener("click",O);e.shoppingBtn.addEventListener("click",w);function E(){window.innerWidth>=768&&(e.burgerMenu.style.display="none"),e.menuOpenBtn.style.display="block",e.menuCloseBtn.style.display="none"}function q(){e.menuOpenBtn.style.display="none",e.menuCloseBtn.style.display="block",e.burgerMenu.style.display="block"}function M(){e.menuOpenBtn.style.display="block",e.menuCloseBtn.style.display="none",e.burgerMenu.style.display="none"}e.menuOpenBtn.addEventListener("click",q);e.menuCloseBtn.addEventListener("click",M);window.addEventListener("resize",E);function h(){e.modal.style.display="block",e.modalwrapper.style.display="flex",y()}function c(){e.modal.style.display="none",e.modalwrapper.style.display="none"}function C(){e.signUpForm.style.display="none",e.signInForm.style.display="block",e.signInOption.classList.add("active"),e.signUpOption.classList.remove("active")}function y(){e.signUpForm.style.display="block",e.signInForm.style.display="none",e.signUpOption.classList.add("active"),e.signInOption.classList.remove("active")}function U(){u.show({title:"Success",message:"Sign up successful!",color:"green",position:"topRight",timeout:5e3}),c()}function F(){u.show({title:"Success",message:"Sign in successful!",color:"green",position:"topRight",timeout:5e3}),c()}e.mobileLoginBtn.addEventListener("click",h);e.openModalBtn.addEventListener("click",h);e.closeModalBtn.addEventListener("click",c);e.signInOption.addEventListener("click",C);e.signUpOption.addEventListener("click",y);e.signUpBtn.addEventListener("submit",U);e.signInBtn.addEventListener("submit",F);export{e as r};
-//# sourceMappingURL=modal-sign-up-28113555.js.map
+//# sourceMappingURL=modal-sign-up-7c4c6e9c.js.map
