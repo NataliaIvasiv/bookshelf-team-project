@@ -9,8 +9,8 @@ export function createModalMarkup(FROM_SERVER) {
     <p class="modal-author">${FROM_SERVER.author}</p>
     <p class="modal-description">${FROM_SERVER.description}</p>
     <ul class="modal-shops-list">
-    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[0].url}"><img src="../img/amazon-l.png" width=62 height=19/></a></li>
-    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[1].url}"><img src="../img/apple-l.png" width=33 height=32/></a></li>
+    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[0].url}" target="_blank"><img src="../img/amazon-l.png" width=62 height=19/></a></li>
+    <li class="modal-shops-item"><a href="${FROM_SERVER.buy_links[1].url}" target="_blank"><img src="../img/apple-l.png" width=33 height=32/></a></li>
     </ul>
     </div>
     <button type="submit" class="modal-btn"></button>
