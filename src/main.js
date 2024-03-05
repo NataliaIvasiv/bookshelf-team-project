@@ -17,7 +17,7 @@ import './js/shopping-list-render-function';
 import './js/shopping-list-template';
 import './js/header';
 import './js/categories-list-render';
-import { renderCategoriesList } from './js/categories-list-render';
+import { addCategoriesList, homeOnLoad, renderCategoriesList } from './js/categories-list-render';
 import { bookTitle, renderCategoriesMain } from './js/category-render-function';
 import {addPopularMainTitle, renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
@@ -29,29 +29,9 @@ import { emptyPage } from './js/izitoast';
 
 const booksApi = new booksAPI();
 
-// *******************header***************************
-
-
-// categories-list**************************************
-
-async function addCategoriesList() {
-  let books;
-  try {
-    books = await booksApi.getCategoriesList();
-  } catch (err) {
-    console.log(err);
-    return;
-  }
-  renderCategoriesList(books);
-}
-
-addCategoriesList();
-
-
-// all-categories*******************************************
 let selectedCategory;
 
-window.addEventListener("load", renderPopularBooks('All categories'));
+window.addEventListener("load", homeOnLoad);
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
