@@ -8,7 +8,7 @@ import { emptyPage } from "./izitoast";
 
 const booksApi = new booksAPI();
 
-//render ALL CATEGORY
+//render ALL CATEGORY (BESTSELLERS)
 
 export async function renderPopularBooks(selectedCategory){
 if (selectedCategory.textContent === 'All categories' || selectedCategory === 'All categories')  {
