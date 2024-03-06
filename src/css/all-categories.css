@@ -85,7 +85,7 @@
     color: var(--black);
     padding: 14px 28px;
     right: 0;
-    margin-left: 171px;
+    margin-left: 165px;
 }
 .see-more-btn:hover, .see-more-btn:focus{
   background-color: var(--violet);
