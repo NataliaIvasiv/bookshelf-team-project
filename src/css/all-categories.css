@@ -6,20 +6,18 @@
     margin-bottom: 40px;
   }
 
-  
-
-  .title-book-section{
-    font-family: DM Sans;
-    font-size: 48px;
-    font-weight: 700;
-  margin-bottom: 40px;
-  } 
-
   .last-word{
     color: rgba(79, 46, 232, 1);
   }
        /*all books  **********************************/
-
+.title-book-section{
+        font-family: DM Sans;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 119%;
+    letter-spacing: -0.04em;
+      margin-bottom: 40px;
+      } 
 
 .book-card {
         width: 335px;
@@ -40,15 +38,30 @@
 }
 
 .book-details{
+ 
   width: 335px;
+  
 }
 
 .book-title{
   width: 335px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  /* -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical; */
 }
 
 .book-author{
   width: 335px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 110%;
+  letter-spacing: 0.04em;
+  color:rgba(180, 175, 175, 1);
+   width: 180px; 
 }
 .see-more-btn {
   border: 2px solid var(--violet);
@@ -65,6 +78,7 @@
     color: var(--black);
     padding: 14px 28px;
     right: 0;
+    margin-left: 211px;
 }
 .see-more-btn:hover, .see-more-btn:focus{
   background-color: var(--violet);
@@ -80,7 +94,17 @@
    /* height: 336px; */
    gap: 25px;
    margin: 0 auto;
-  }    
+  }  
+  
+  .title-book-section{
+    font-family: DM Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 108%;
+letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  } 
+
 .book-card{
   width: 218px;
   height: 316px;
@@ -100,6 +124,10 @@
 
 .book-author{
   width: 218px;
+}
+
+.see-more-btn{
+  margin-left: 580px;
 }
     }
 
@@ -171,7 +199,7 @@
       display: flex;
       flex-direction: column; */
       width: 180px;
-      padding: 10px;
+      /* padding: 10px; */
     }
     
 .book-title {
@@ -183,7 +211,7 @@
       width: 180px;
     }
     
-.book-author {
+/* .book-author {
     font-weight: 400;
     font-style: italic;
     font-size: 12px;
@@ -191,10 +219,23 @@
     letter-spacing: 0.04em;
     color:rgba(180, 175, 175, 1);
      width: 180px; 
+    }  */
+
+    .see-more-btn{
+      margin-left: 872px;
     } 
+
     }
     .popular-title{
       text-transform: uppercase;
+      margin-top: 40px;
+      margin-bottom: 18px;
+      width: 277px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
+      letter-spacing: 0.03em;
+      color: rgba(180, 175, 175, 1)
     }
     .li-title{
       width: 100%;
