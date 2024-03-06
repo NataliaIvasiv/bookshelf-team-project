@@ -18,6 +18,10 @@
     letter-spacing: -0.04em;
       margin-bottom: 40px;
       } 
+  
+.book-item:nth-child(n + 2) {
+        display: none;
+      }
 
 .book-card {
         width: 335px;
@@ -111,10 +115,13 @@ letter-spacing: -0.04em;
     
   }
 
+  .book-item:nth-child(n + 2) {
+    display: flex;
+  }
   .book-item:nth-child(n + 4) {
     display: none;
   }
-
+  
 
 .book-card{
   width: 218px;
