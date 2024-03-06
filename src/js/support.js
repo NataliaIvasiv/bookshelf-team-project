@@ -1,137 +1,137 @@
 import { refs } from './refs'
 
-// import imgsupport-img1 from '../../img/support/support-img1@1.png';
-// import imgsupport-img2 from '../../img/support/support-img2@1.png';
-// import imgsupport-img3 from '../../img/support/support-img3@1.png';
-// import imgsupport-img4 from '../../img/support/support-img4@1.png';
-// import imgsupport-img5 from '../../img/support/support-img5@1.png';
-// import imgsupport-img6 from '../../img/support/support-img6@1.png';
-// import imgsupport-img7 from '../../img/support/support-img7@1.png';
-// import imgsupport-img8 from '../../img/support/support-img8@1.png';
-// import imgsupport-img9 from '../../img/support/support-img9@1.png';
-// import imgsupport-img1_2x from '../../img/support/support-img1@2x.png';
-// import imgsupport-img2_2x from '../../img/support/support-img2@2x.png';
-// import imgsupport-img3_2x from '../../img/support/support-img3@2x.png';
-// import imgsupport-img4_2x from '../../img/support/support-img4@2x.png';
-// import imgsupport-img5_2x from '../../img/support/support-img5@2x.png';
-// import imgsupport-img6_2x from '../../img/support/support-img6@2x.png';
-// import imgsupport-img7_2x from '../../img/support/support-img7@2x.png';
-// import imgsupport-img8_2x from '../../img/support/support-img8@2x.png';
-// import imgsupport-img9_2x from '../../img/support/support-img9@2x.png';
+import support1 from '../img/support/support-img1@1x.png';
+import support2 from '../img/support/support-img2@1x.png';
+import support3 from '../img/support/support-img3@1x.png';
+import support4 from '../img/support/support-img4@1x.png';
+import support5 from '../img/support/support-img5@1x.png';
+import support6 from '../img/support/support-img6@1x.png';
+import support7 from '../img/support/support-img7@1x.png';
+import support8 from '../img/support/support-img8@1x.png';
+import support9 from '../img/support/support-img9@1x.png';
+import support1_2x from '../img/support/support-img1@2x.png';
+import support2_2x from '../img/support/support-img2@2x.png';
+import support3_2x from '../img/support/support-img3@2x.png';
+import support4_2x from '../img/support/support-img4@2x.png';
+import support5_2x from '../img/support/support-img5@2x.png';
+import support6_2x from '../img/support/support-img6@2x.png';
+import support7_2x from '../img/support/support-img7@2x.png';
+import support8_2x from '../img/support/support-img8@2x.png';
+import support9_2x from '../img/support/support-img9@2x.png';
 
-// const supportArray = [
-//   {
-//     title: 'Save the Children',
-//     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-//     img: ('imgsupport-img1'),
-//     img2: ('imgsupport-img1_2x'),
-//   },
-//   {
-//     title: 'Project HOPE',
-//     url: 'https://www.projecthope.org/country/ukraine/',
-//     img: ('imgsupport-img2'),
-//     img2: ('imgsupport-img2_2x'),
-//   },
-//     {
-//     title: 'International Medical Corps',
-//     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-//     img: ('imgsupport-img3'),
-//     img2: ('imgsupport-img3_2x'),
-//   },
-//   {
-//     title: 'RAZOM',
-//     url: 'https://www.razomforukraine.org/',
-//     img: ('imgsupport-img4'),
-//     img2: ('imgsupport-img4_2x'),
-//   },
-//   {
-//     title: 'Action against hunger',
-//     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-//     img: ('imgsupport-img5'),
-//     img2: ('imgsupport-img5_2x'),
-//   },
-//   {
-//     title: 'Serhiy Prytula Charity Foundation',
-//     url: 'https://prytulafoundation.org/en',
-//     img: ('imgsupport-img6'),
-//     img2: ('imgsupport-img6_2x'),
-//   },
-//   {
-//     title: 'Medicins Sans Frontieres',
-//     url: 'https://www.msf.org/ukraine',
-//     img: ('imgsupport-img7'),
-//     img2: ('imgsupport-img7_2x'),
-//   },
-//   {
-//     title: 'World vision',
-//     url: 'https://www.wvi.org/emergencies/ukraine',
-//     img: ('imgsupport-img8'),
-//     img2: ('imgsupport-img8_2x'),
-//   }, 
-//   {
-//     title: 'UNITED24',
-//     url: 'https://u24.gov.ua/uk',
-//     img: ('imgsupport-img9'),
-//     img2: ('imgsupport-img9_2x'),
-//   },
-// ];
-
-export const supportArray = [
+const supportArray = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: ('./img/support/support-img1@1x.png'),
-    img2: ('./img/support/support-img1@2x.png'),
+    img: (support1),
+    img2: (support1_2x),
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: ('./img/support/support-img2@1x.png'),
-    img2: ('./img/support/support-img2@2x.png'),
+    img: (support2),
+    img2: (support2_2x),
   },
     {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: ('./img/support/support-img3@1x.png'),
-    img2: ('./img/support/support-img3@2x.png'),
+    img: (support3),
+    img2: (support3_2x),
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: ('./img/support/support-img4@1x.png'),
-    img2: ('./img/support/support-img4@2x.png'),
+    img: (support4),
+    img2: (support4_2x),
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: ('./img/support/support-img5@1x.png'),
-    img2: ('./img/support/support-img5@2x.png'),
+    img: (support5),
+    img2: (support5_2x),
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: ('./img/support/support-img6@1x.png'),
-    img2: ('./img/support/support-img6@2x.png'),
+    img: (support6),
+    img2: (support6_2x),
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: ('./img/support/support-img7@1x.png'),
-    img2: ('./img/support/support-img7@2x.png'),
+    img: (support7),
+    img2: (support7_2x),
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: ('./img/support/support-img8@1x.png'),
-    img2: ('./img/support/support-img8@2x.png'),
+    img: (support8),
+    img2: (support8_2x),
   }, 
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: ('./img/support/support-img9@1x.png'),
-    img2: ('./img/support/support-img9@2x.png'),
+    img: (support9),
+    img2: (support9_2x),
   },
 ];
+
+// export const supportArray = [
+//   {
+//     title: 'Save the Children',
+//     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+//     img: ('./img/support/support-img1@1x.png'),
+//     img2: ('./img/support/support-img1@2x.png'),
+//   },
+//   {
+//     title: 'Project HOPE',
+//     url: 'https://www.projecthope.org/country/ukraine/',
+//     img: ('./img/support/support-img2@1x.png'),
+//     img2: ('./img/support/support-img2@2x.png'),
+//   },
+//     {
+//     title: 'International Medical Corps',
+//     url: 'https://internationalmedicalcorps.org/country/ukraine/',
+//     img: ('./img/support/support-img3@1x.png'),
+//     img2: ('./img/support/support-img3@2x.png'),
+//   },
+//   {
+//     title: 'RAZOM',
+//     url: 'https://www.razomforukraine.org/',
+//     img: ('./img/support/support-img4@1x.png'),
+//     img2: ('./img/support/support-img4@2x.png'),
+//   },
+//   {
+//     title: 'Action against hunger',
+//     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
+//     img: ('./img/support/support-img5@1x.png'),
+//     img2: ('./img/support/support-img5@2x.png'),
+//   },
+//   {
+//     title: 'Serhiy Prytula Charity Foundation',
+//     url: 'https://prytulafoundation.org/en',
+//     img: ('./img/support/support-img6@1x.png'),
+//     img2: ('./img/support/support-img6@2x.png'),
+//   },
+//   {
+//     title: 'Medicins Sans Frontieres',
+//     url: 'https://www.msf.org/ukraine',
+//     img: ('./img/support/support-img7@1x.png'),
+//     img2: ('./img/support/support-img7@2x.png'),
+//   },
+//   {
+//     title: 'World vision',
+//     url: 'https://www.wvi.org/emergencies/ukraine',
+//     img: ('./img/support/support-img8@1x.png'),
+//     img2: ('./img/support/support-img8@2x.png'),
+//   }, 
+//   {
+//     title: 'UNITED24',
+//     url: 'https://u24.gov.ua/uk',
+//     img: ('./img/support/support-img9@1x.png'),
+//     img2: ('./img/support/support-img9@2x.png'),
+//   },
+// ];
 
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
