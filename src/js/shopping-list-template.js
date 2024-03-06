@@ -4,6 +4,9 @@ import amazon3x from '../img/amazon-3x.png';
 import book1x from '../img/book-1x.png';
 import book2x from '../img/book-2x.png';
 import book3x from '../img/book-3x.png';
+import dumpbut from '../img/dump(1).png';
+import dumpbut2 from '../img/dump(2).png';
+import dumpbut3 from '../img/dump(3).png';
 
 export function createBookMarkup(bookData) {
   const {
@@ -47,7 +50,11 @@ export function createBookMarkup(bookData) {
           </a>
       </div>      
           <button data-id="${bookId}" class="shopping-list-dlt-book-btn" >         
-            <svg class="shopping-list-dlt-book-btn-icon" width="16" height="16"><use href="../img/symbol-defs.svg#icon-trash1"></use></svg>
+          <img width="18" height="18" class="shopping-list-dlt-book-btn-icon" srcset="
+          ${dumpbut} 1x,
+          ${dumpbut2} 2x,
+          ${dumpbut3} 3x
+        " src="${dumpbut}" />
           </button>
         </div>
       </div>
