@@ -66,6 +66,9 @@
   letter-spacing: 0.04em;
   color:rgba(180, 175, 175, 1);
    width: 180px; 
+   white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 .see-more-btn {
   border: 2px solid var(--violet);
