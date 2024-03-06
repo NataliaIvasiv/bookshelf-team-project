@@ -85,7 +85,7 @@
     color: var(--black);
     padding: 14px 28px;
     right: 0;
-    margin-left: 201px;
+    margin-left: 165px;
 }
 .see-more-btn:hover, .see-more-btn:focus{
   background-color: var(--violet);
@@ -219,6 +219,7 @@ letter-spacing: -0.04em;
     }
     
 .book-details {
+ 
       /* width: 360px;
       height: 48px;
       background: #fff;
@@ -236,7 +237,9 @@ letter-spacing: -0.04em;
       color:rgba(17, 17, 17, 1);
       width: 180px;
     }
-    
+  .book-author{
+    width: 180px;
+  }  
 /* .book-author {
     font-weight: 400;
     font-style: italic;
