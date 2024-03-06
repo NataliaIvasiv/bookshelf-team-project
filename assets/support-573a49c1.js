@@ -52,4 +52,4 @@ import{i as h,S as R}from"./vendor-e2ce0d38.js";(function(){const s=document.cre
            <img class="support-img" src="${r}" data-source="${o}" alt="${t}" />
        </a>
      </div>`}).join("");P(X);const J=new R(".swiper",{direction:"vertical",loop:!0,slidesPerView:4,spaceBetween:20,breakpoints:{768:{slidesPerView:6,spaceBetween:10}}});function K(){J.slideNext(200)}export{e as r};
-//# sourceMappingURL=support-a15463bf.js.map
+//# sourceMappingURL=support-573a49c1.js.map
