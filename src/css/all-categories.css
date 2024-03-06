@@ -20,6 +20,9 @@
   }
        /*all books  **********************************/
 
+.popular-title{
+  margin-bottom: 18px;
+}
 
 .book-card {
         width: 335px;
@@ -63,8 +66,14 @@
     letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--black);
-    padding: 14px 28px;
-    right: 0;
+    /* padding: 14px 28px; */
+    /* margin-top: 32px; */
+    /* margin-right: 0; */
+    margin-bottom: 40px;
+   
+  
+    /* float: right; */
+   
 }
 .see-more-btn:hover, .see-more-btn:focus{
   background-color: var(--violet);
@@ -80,6 +89,7 @@
    /* height: 336px; */
    gap: 25px;
    margin: 0 auto;
+   
   }    
 .book-card{
   width: 218px;

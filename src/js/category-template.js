@@ -21,4 +21,6 @@ export function mainBooksTemplate(books) {
     return `<ul class='all-categories-main'>${markup}</ul>`
   }
   
-
+//  export function btnMain(){
+//     return `<button class='see-more-btn' id='${item.list_name}'>See more</button>`
+//   }
