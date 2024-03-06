@@ -26,6 +26,7 @@ import './js/modal-sign-up';
 import './js/izitoast';
 import { emptyPage } from './js/izitoast';
 import './js/support'
+import './js/scroll-up'
 
 
 const booksApi = new booksAPI();
