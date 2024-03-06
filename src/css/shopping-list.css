@@ -4,14 +4,10 @@
 .shop-support {
   display: none;
 }
-.shopping-list-flex {
-  /* display: flex;
-  flex-direction: row; */
-}
 
 .shopping-list-empty-container {
   margin: 0 auto;
-  display: flex;
+  /*display: flex;*/
   gap: 14px;
   align-items: center;
   justify-content: center;
@@ -291,13 +287,19 @@ body.dark .shopping-list-apple:hover {
     height: 24px;
   }
   .shopping-list-title {
-    margin: 0;
+    margin-bottom: 40px;
+    margin-top: 0;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .shopping-list-body {
-    display: grid;
+  .shopping-list-empty-container {
+    max-width: 349px;
+    margin-left: 170px;
+    margin-top: 50px;
+  }
+  .shopping-list-flex {
+    width: 996px;
   }
   .shop-support {
     display: inline;
