@@ -14,6 +14,14 @@ export function bookTitle(selectedCategory) {
     applyLastWordStyle();
   }
 }
+export function bookTitleSeeMore(selectedCategory) {
+  if (selectedCategory !== 'All categories') {
+    const markupBookTitle = `<h2 class="title-book-section">${selectedCategory}</h2>`;
+    refs.allCategoriesContainer.insertAdjacentHTML('beforeend', markupBookTitle);
+  
+    applyLastWordStyle();
+  }
+}
 
 export function applyLastWordStyle() {
   const elements = document.querySelectorAll('.title-book-section');

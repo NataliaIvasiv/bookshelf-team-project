@@ -18,7 +18,7 @@ import './js/shopping-list-template';
 import './js/header';
 import './js/categories-list-render';
 import { addCategoriesList, homeOnLoad, renderCategoriesList } from './js/categories-list-render';
-import { bookTitle, renderCategoriesMain } from './js/category-render-function';
+import { bookTitle, bookTitleSeeMore, renderCategoriesMain } from './js/category-render-function';
 import {addPopularMainTitle, renderPopularBooks} from './js/popular-books-render';
 import { refs } from './js/refs';
 import './js/mob-menu';
@@ -35,7 +35,7 @@ let selectedCategory;
 window.addEventListener("load", async () => {
   await addCategoriesList();
   await renderPopularBooks('All categories');
-  
+
 });
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
@@ -49,9 +49,8 @@ async function onCatListClick(e) {
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
   highlightSelectedCategory(selectedCategory);
-  renderPopularBooks(selectedCategory);
-
- 
+  await renderPopularBooks(selectedCategory);
+    
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
     
@@ -73,17 +72,34 @@ function highlightSelectedCategory(selectedCategory) {
       item.classList.remove('categories-list-active');
 }
 }
-// ================modal================
 
 
+
+
+
+// ================ALL BOOKS CONTAINER EVENT LISTENER================
+
+//==================  SEE MORE BUTTONS =================
 refs.allCategoriesContainer.addEventListener('click', async e => {
-  if (e.target.nodeName ==  'BUTTON' || e.target.nodeName == 'H2') return;
+  if (e.target.nodeName == 'H2') return;
+  if (e.target.nodeName == 'BUTTON') {
+    refs.allCategoriesContainer.innerHTML = '';
+    const selectedSeeMore = e.target.closest('.see-more-btn').dataset.id;
+    let books;
+    try {
+    books = await booksApi.getSelectedCategory(selectedSeeMore);
+      bookTitleSeeMore(selectedSeeMore);
+      renderCategoriesMain(books);
+  } catch (err) {
+    console.log('error');
+    emptyPage();
+  }
+    
 
-  const bookId = e.target.closest('.book-item').dataset.id;
-
-
+  } else{
+    //=========================modal================================
+    const bookId = e.target.closest('.book-item').dataset.id;
   const book = await booksApi.getBookDetailedInfo(bookId);
-
 
   const markup = createModalMarkup(book);
   pushMarkup(markup);
@@ -96,7 +112,7 @@ refs.allCategoriesContainer.addEventListener('click', async e => {
       
     toggleShoppingList(book);
   });
-    hideModal();
+    hideModal();}
 
 });
 

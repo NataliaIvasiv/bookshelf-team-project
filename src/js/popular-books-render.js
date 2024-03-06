@@ -41,10 +41,11 @@ if (selectedCategory.textContent === 'All categories' || selectedCategory === 'A
        </div>
   </li>`;
           }).join('') +
-        `</ul>` + `<button class='see-more-btn' id='${item.list_name}'>See more</button>`
+        `</ul>` + `<button class='see-more-btn' data-id='${item.list_name}'>See more</button>`
     }).join('');
     refs.allCategoriesContainer.insertAdjacentHTML('beforeend', bestSellersMarkup)
     
+  
     }
 }
     
@@ -56,3 +57,4 @@ export function addPopularMainTitle(selectedCategory) {
   applyLastWordStyle();
 }
 
+// see more
