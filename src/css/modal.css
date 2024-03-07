@@ -1,3 +1,4 @@
+
 .modal-backdrop {
   display: flex;
   position: fixed;
@@ -42,12 +43,19 @@
   stroke: var(--black);
 }
 
-
 .modal-btn {
+  background-color: transparent;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
   width: 211px;
   height: 46px;
+  transition: background-color 0.3s ease
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #4f2ee8;
+  color: #fff;
 }
 
 .modal-author {
@@ -69,6 +77,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.modal-success-text {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: rgba(17, 17, 17, 0.5);
+  position: relative;
+  top: -20px;
 }
 
 @media screen and (min-width: 768px) {

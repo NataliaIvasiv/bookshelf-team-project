@@ -121,7 +121,8 @@ refs.allCategoriesContainer.addEventListener('click', async e => {
 
     modalButton.addEventListener('click', elem => {
       elem.preventDefault();
-     successTextMarkup()
+      successTextMarkup()
+      
 
       toggleShoppingList(book);
     });
