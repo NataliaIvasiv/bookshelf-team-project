@@ -92,7 +92,7 @@
   margin-bottom: 4px;
   overflow: hidden;
   max-width: 150px;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
@@ -111,7 +111,7 @@ body.dark .shopping-list-book-title {
   letter-spacing: 0.02em;
   margin-bottom: 8px;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
@@ -145,7 +145,7 @@ body.dark .shopping-list-book-description {
   bottom: 14px;
   max-width: 100px;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
@@ -303,9 +303,10 @@ body.dark .shopping-list-apple:hover {
 @media screen and (min-width: 1440px) {
   .shopping-list-empty-container {
     max-width: 349px;
-    margin-left: 170px;
-    margin-top: 50px;
+    margin-left: 300px;
+    /* margin-top: 50px;*/
   }
+ 
   .shopping-list-flex {
     width: 996px;
   }
@@ -317,7 +318,9 @@ body.dark .shopping-list-apple:hover {
     min-width: 996px;
     min-height: 845px;
   }
-
+  .shopping-list-title {
+    font-size: 48px;
+  }
   .shopping-list-book-item {
     display: flex;
     padding: 30px 24px;
