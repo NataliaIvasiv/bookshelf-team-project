@@ -55,7 +55,7 @@ body.dark {
     color: #b4afaf;
   }
 
-  .modal {
+  .modal-content-container {
     background-color: var(--black-1);
     border: 2px solid var(--white);
   }
