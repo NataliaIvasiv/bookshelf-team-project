@@ -9,10 +9,10 @@ export function createModalMarkup(FROM_SERVER) {
     <p class="modal-author">${FROM_SERVER.author}</p>
     <p class="modal-description">${FROM_SERVER.description}</p>
     <ul class="modal-shops-list">
-    <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[0].url}" target="_blank">
+    <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[0].url}" target="_blank" rel="noopener noreferrer">
               <img width="32" height="11" class="shopping-list-amazon"  src="../img/amazon-1x.png" alt="amazon" />
           </a></li>
-    <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[1].url}" target="_blank">
+    <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[1].url}" target="_blank" rel="noopener noreferrer">
               <img width="16" height="16" class="shopping-list-apple"  src="../img/book-1x.png" alt="apple" />
           </a></li>
     </ul>
@@ -34,25 +34,22 @@ export function hideModal() {
 
   const modalCloseBtn = document.querySelector('.modal-close-btn');
   document.addEventListener('keydown', event => {
-    event.preventDefault();
+    // event.preventDefault();
     if (event.key === 'Escape') {
       removeListeners();
     }
   });
 
   modalCloseBtn.addEventListener('click', event => {
-    event.preventDefault();
+    // event.preventDefault();
     removeListeners();
   });
 
   modalBackdrop.addEventListener('click', event => {
-  
-    event.preventDefault();
+    // event.preventDefault();
     if (event.target === modalBackdrop) {
       removeListeners();
-
     }
-
   });
 }
 
@@ -60,19 +57,41 @@ export function removeListeners() {
   const modalBackdrop = document.querySelector('.modal-backdrop');
   const modalCloseBtn = document.querySelector('.modal-close-btn');
   if (modalBackdrop && modalBackdrop.parentNode) {
-  modalBackdrop.parentNode.removeChild(modalBackdrop);
+    modalBackdrop.parentNode.removeChild(modalBackdrop);
   }
 
   if (modalCloseBtn) {
-      document.removeEventListener('keydown', e => {
-        console.log('listener is remove');
-      });
-      modalCloseBtn.removeEventListener('click', e => {
-        console.log('listener is remove');
-      });
-      modalBackdrop.removeEventListener('click', e => {
-        console.log('listener is remove');
-      });
+    document.removeEventListener('keydown', e => {
+      console.log('listener is remove');
+    });
+    modalCloseBtn.removeEventListener('click', e => {
+      console.log('listener is remove');
+    });
+    modalBackdrop.removeEventListener('click', e => {
+      console.log('listener is remove');
+    });
   }
+  document.body.style.overflow = null;
+}
 
+export function successTextMarkup() {
+  const existingSuccessText = document.querySelector('.modal-success-text');
+  const modalButton = document.querySelector('.modal-btn');
+
+  if (!existingSuccessText) {
+    if (
+      modalButton.textContent.trim().toLowerCase() ===
+      'remove from shopping list'
+    )
+      return;
+    const successText = `<p class="modal-success-text">Congratulations! You have added the book to the shopping list.
+       To delete, press the button "Remove from the shopping list".</p>`;
+
+    pushSuccessTextMarkup(successText);
+  }
+}
+
+export function pushSuccessTextMarkup(markup) {
+  const modalWindow = document.querySelector('.modal-content-container');
+  modalWindow.insertAdjacentHTML('beforeend', markup);
 }
