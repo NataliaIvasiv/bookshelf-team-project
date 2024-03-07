@@ -159,7 +159,7 @@ const markup = supportArray
 
     return `
     <div class="support-list-item swiper-slide">
-       <a href="${url}" class="support-link" aria-label="${title}" target="_blank" rel="noopener norefferer nofollow">
+       <a href="${url}" class="support-link" aria-label="${title}" target="_blank" rel="noopener noreferrer nofollow">
          <p class="support-number">${number}</p>
            <img class="support-img" src="${img}" data-source="${img2}" alt="${title}" />
        </a>
