@@ -1,6 +1,7 @@
-function showLoader() {
-    refs.loadElem.classList.remove('hidden');
+import {refs} from './refs'
+export function showLoader() {
+    refs.loadElem.classList.remove('hide-loader');
   }
-  function hideLoader() {
-    refs.loadElem.classList.add('hidden');
+ export function hideLoader() {
+     refs.loadElem.classList.add('hide-loader');
   }

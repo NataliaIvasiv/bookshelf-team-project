@@ -4,6 +4,7 @@ import {refs} from './refs'
 import './izitoast';
 import { emptyPage } from "./izitoast";
 
+import { showLoader, hideLoader } from "./loader";
 
 
 const booksApi = new booksAPI();
@@ -14,6 +15,7 @@ export async function renderPopularBooks(selectedCategory){
 if (selectedCategory.textContent === 'All categories' || selectedCategory === 'All categories')  {
   addPopularMainTitle('Best Sellers Books');  
   let popularBooks;
+
   try {
     popularBooks = await booksApi.getPopularBooks();
     } catch (err) {

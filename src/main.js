@@ -42,29 +42,34 @@ import './js/izitoast';
 import { emptyPage } from './js/izitoast';
 import './js/support';
 import './js/scroll-up';
-import './js/loader';
+import { hideLoader, showLoader} from'./js/loader';
 
 const booksApi = new booksAPI();
 
 let selectedCategory;
 
 window.addEventListener('load', async () => {
+  showLoader();
   await addCategoriesList();
+  
   await renderPopularBooks('All categories');
+  hideLoader();
+  
 });
 
 refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
-  // showLoader();
+  
   refs.allCategoriesContainer.innerHTML = '';
 
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
   highlightSelectedCategory(selectedCategory);
+  
   await renderPopularBooks(selectedCategory);
-  // hideLoader();
+
 
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
@@ -72,6 +77,7 @@ async function onCatListClick(e) {
     console.log('error');
     emptyPage();
   }
+
   bookTitle(selectedCategory);
   renderCategoriesMain(books, selectedCategory);
 }
