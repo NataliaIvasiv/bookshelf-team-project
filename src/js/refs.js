@@ -1,5 +1,7 @@
 
 export const refs = {
+   //loader
+   loadElem: document.querySelectorAll('.loader'),
    //header
   listItems: document.querySelectorAll('.nav-list-item'),
   currentPage: window.location.href,
