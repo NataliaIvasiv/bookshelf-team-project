@@ -79,15 +79,16 @@ export function successTextMarkup() {
   const modalButton = document.querySelector('.modal-btn');
 
   if (!existingSuccessText) {
-    if (
-      modalButton.textContent.trim().toLowerCase() ===
-      'remove from shopping list'
-    )
-      return;
+    if (modalButton.textContent.trim().toLowerCase() ==='remove from shopping list') return;
     const successText = `<p class="modal-success-text">Congratulations! You have added the book to the shopping list.
        To delete, press the button "Remove from the shopping list".</p>`;
 
     pushSuccessTextMarkup(successText);
+  } else {
+    if (modalButton.textContent.trim().toLowerCase() === 'remove from shopping list') {
+    existingSuccessText.parentNode.removeChild(existingSuccessText);
+      
+    }
   }
 }
 
@@ -95,3 +96,4 @@ export function pushSuccessTextMarkup(markup) {
   const modalWindow = document.querySelector('.modal-content-container');
   modalWindow.insertAdjacentHTML('beforeend', markup);
 }
+
