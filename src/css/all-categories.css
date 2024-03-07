@@ -99,9 +99,9 @@
 
   .all-categories-main{
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap: nowrap;
    /* height: 336px; */
-   gap: 25px;
+   gap: 20px;
    margin: 0 auto;
   }  
   
@@ -150,7 +150,10 @@ letter-spacing: -0.04em;
 }
 
 .see-more-btn{
-  margin-left: 580px;
+  float: none;
+  display: block;
+  margin-left: 560px;
+  
 }
     }
 
