@@ -57,13 +57,14 @@ refs.categoriesListMain.addEventListener('click', onCatListClick);
 async function onCatListClick(e) {
   e.preventDefault();
   let books;
-
+  // showLoader();
   refs.allCategoriesContainer.innerHTML = '';
 
   if (e.target === e.currentTarget) return;
   selectedCategory = e.target.closest('li');
   highlightSelectedCategory(selectedCategory);
   await renderPopularBooks(selectedCategory);
+  // hideLoader();
 
   try {
     books = await booksApi.getSelectedCategory(selectedCategory.textContent);
