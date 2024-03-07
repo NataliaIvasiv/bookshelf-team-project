@@ -90,6 +90,11 @@
 .see-more-btn:hover, .see-more-btn:focus{
   background-color: var(--violet);
 }
+.see-more-btn:hover{
+  transform: scale(1.05);
+    transition: all 100ms ease-in-out;
+    box-shadow: 0px 0px 8px 4px rgba(79, 46, 232, 0.5);
+}
 
 
 
