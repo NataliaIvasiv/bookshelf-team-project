@@ -1,4 +1,12 @@
 import { refs } from './refs';
+import amazon1x from '../img/amazon-1x.png';
+import amazon2x from '../img/amazon-2x.png';
+import amazon3x from '../img/amazon-3x.png';
+import book1x from '../img/book-1x.png';
+import book2x from '../img/book-2x.png';
+import book3x from '../img/book-3x.png';
+
+
 export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-backdrop">
     <div class="modal-content-container">
@@ -10,10 +18,17 @@ export function createModalMarkup(FROM_SERVER) {
     <p class="modal-description">${FROM_SERVER.description}</p>
     <ul class="modal-shops-list">
     <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[0].url}" target="_blank" rel="noopener noreferrer">
-              <img width="32" height="11" class="shopping-list-amazon"  src="../img/amazon-1x.png" alt="amazon" />
+    <img width="32" height="11" class="shopping-list-amazon" srcset="
+    ${amazon1x} 1x,
+    ${amazon2x} 2x,
+    ${amazon3x} 3x
+  " src="${amazon1x}" alt="amazon" />
           </a></li>
     <li class="modal-shops-item"><a class="test-link" href="${FROM_SERVER.buy_links[1].url}" target="_blank" rel="noopener noreferrer">
-              <img width="16" height="16" class="shopping-list-apple"  src="../img/book-1x.png" alt="apple" />
+    <img width="16" height="16" class="shopping-list-apple" srcset="
+    ${book1x} 1x,
+    ${book2x} 2x,
+    ${book3x} 3x" src="${book1x}" alt="apple" />
           </a></li>
     </ul>
     </div>
