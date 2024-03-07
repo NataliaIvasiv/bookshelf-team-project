@@ -102,6 +102,26 @@ body.dark {
     color: #4f2ee8;
     text-decoration: underline;
   }
+
+  .modal-close-btn {
+    stroke: var(--white);
+  }
+
+  .modal-btn {
+    color: var(--white);
+  }
+
+  .modal-success-text {
+    color: var(--white);
+  }
+
+  .shopping-list-book-item {
+    background-color: var(--black);
+  }
+
+  .see-more-btn:hover {
+    color: var(--white);
+  }
 }
 
 .switch-theme-checkbox {

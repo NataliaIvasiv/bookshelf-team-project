@@ -207,6 +207,7 @@ body.dark .shopping-list-apple:hover {
   background-color: #4f2ee8;
   border-radius: 50%;
   transition: 60ms;
+  border: none;
 }
 
 .shopping-list-dlt-book-btn:hover,
