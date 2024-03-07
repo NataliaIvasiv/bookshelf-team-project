@@ -97,6 +97,10 @@
   -webkit-box-orient: vertical;
 }
 
+body.dark .shopping-list-book-title {
+  color: #ffffff;
+}
+
 .shopping-list-book-category {
   color: #b4afaf;
   font-family: 'DM Sans', sans-serif;
@@ -124,6 +128,9 @@
   -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+}
+body.dark .shopping-list-book-description {
+  color: #ffffff;
 }
 
 .shopping-list-book-author {
