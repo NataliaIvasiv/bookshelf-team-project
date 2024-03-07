@@ -59,7 +59,10 @@ body.dark {
     background-color: var(--black-1);
     border: 2px solid var(--white);
   }
-
+ .modal{
+   background-color: var(--black-1);
+   border: 2px solid var(--white);
+ }
   .sign-input {
     border: 2px solid var(--white);
     background-color: var(--black-1);
