@@ -42,6 +42,7 @@ import './js/izitoast';
 import { emptyPage } from './js/izitoast';
 import './js/support';
 import './js/scroll-up';
+import './js/loader';
 
 const booksApi = new booksAPI();
 
