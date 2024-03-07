@@ -7,12 +7,12 @@
 
 .shopping-list-empty-container {
   margin: 0 auto;
-  /*display: flex;*/
+  display: flex;
   gap: 14px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 50vh;
+  /*min-height: 50vh;*/
 }
 
 .shopping-list-empty-paragraph {
@@ -143,6 +143,7 @@ body.dark .shopping-list-book-description {
   letter-spacing: -0.04em;
   position: absolute;
   bottom: 14px;
+  /*bottom:18px;*/
   max-width: 100px;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -155,6 +156,7 @@ body.dark .shopping-list-book-description {
   align-items: center;
   position: absolute;
   bottom: 14px;
+  /*bottom: 4px;*/
   right: 14px;
   gap: 8px;
 }
@@ -202,8 +204,8 @@ body.dark .shopping-list-apple:hover {
   width: 28px;
   height: 28px;
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 4px;
+  right: 4px;
   background-color: #4f2ee8;
   border-radius: 50%;
   transition: 60ms;
@@ -303,6 +305,7 @@ body.dark .shopping-list-apple:hover {
   .shopping-list-empty-container {
     max-width: 349px;
     margin-left: 300px;
+    justify-content: start;
     /* margin-top: 50px;*/
   }
  
