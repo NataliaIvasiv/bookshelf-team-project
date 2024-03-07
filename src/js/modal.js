@@ -84,6 +84,11 @@ export function successTextMarkup() {
        To delete, press the button "Remove from the shopping list".</p>`;
 
     pushSuccessTextMarkup(successText);
+  } else {
+    if (modalButton.textContent.trim().toLowerCase() === 'remove from shopping list') {
+    existingSuccessText.parentNode.removeChild(existingSuccessText);
+      
+    }
   }
 }
 

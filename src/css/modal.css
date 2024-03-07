@@ -1,3 +1,4 @@
+
 .modal-backdrop {
   display: flex;
   position: fixed;
@@ -43,6 +44,7 @@
 }
 
 .modal-btn {
+  background-color: transparent;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
   width: 211px;
