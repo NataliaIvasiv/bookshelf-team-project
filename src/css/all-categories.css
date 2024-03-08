@@ -130,6 +130,8 @@ box-shadow: 0px 0px 8px 4px rgba(79, 46, 232, 0.5);
         line-height: 119%;
     letter-spacing: -0.04em;
       margin-bottom: 40px;
+      display: flex;
+      
       } 
   
 .book-item:nth-child(n + 2) {
@@ -216,7 +218,7 @@ box-shadow: 0px 0px 8px 4px rgba(79, 46, 232, 0.5);
 
   .all-categories-main{
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap: nowrap;
    /* height: 336px; */
    gap: 25px;
    margin: 0 auto;
@@ -267,7 +269,7 @@ letter-spacing: -0.04em;
 }
 
 .see-more-btn{
-  margin-left: 580px;
+  margin-left: 560px;
 }
     }
 
