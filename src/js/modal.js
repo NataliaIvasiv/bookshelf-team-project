@@ -10,7 +10,7 @@ import book3x from '../img/book-3x.png';
 export function createModalMarkup(FROM_SERVER) {
   const markup = `<div class="modal-backdrop">
     <div class="modal-content-container">
-    <svg class="modal-close-btn" width="24" height="24"><use href="./img/symbol-defs.svg#icon-x-close1"></use></svg>
+    <svg class="modal-close-btn" width="24" height="24"><use href="/bookshelf-team-project/assets/symbol-defs-b5bfa89c.svg#icon-x-close1"></use></svg>
     <img src="${FROM_SERVER.book_image}" class="modal-book-image" />
     <div class="modal-book-info">
     <h3 class="modal-title">${FROM_SERVER.title}</h3>
