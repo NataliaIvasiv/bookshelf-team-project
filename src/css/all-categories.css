@@ -55,6 +55,7 @@
   /* -webkit-line-clamp: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical; */
+  margin-bottom: 4px;
 }
 
 .book-author{
@@ -176,6 +177,7 @@ letter-spacing: -0.04em;
         display: inline-block;
         /* width: calc((100% - 96px) / 5); */
         height: 256px;
+        margin-bottom: 14px;
     }
 
     .book-item{
