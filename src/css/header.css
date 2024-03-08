@@ -43,6 +43,9 @@ body.dark {
   .categories-list-item:active {
     color: var(--yellow);
   }
+    .categories-list-active {
+      color: var(--yellow);
+    }
 
   .shopping-list-title {
     color: var(--white);
@@ -101,6 +104,26 @@ body.dark {
   .signupOptions .signUpOption.active {
     color: #4f2ee8;
     text-decoration: underline;
+  }
+
+  .modal-close-btn {
+    stroke: var(--white);
+  }
+
+  .modal-btn {
+    color: var(--white);
+  }
+
+  .modal-success-text {
+    color: var(--white);
+  }
+
+  .shopping-list-book-item {
+    background-color: var(--black);
+  }
+
+  .see-more-btn:hover {
+    color: var(--white);
   }
 }
 

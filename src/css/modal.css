@@ -1,4 +1,3 @@
-
 .modal-backdrop {
   display: flex;
   position: fixed;
@@ -49,7 +48,8 @@
   border-radius: 40px;
   width: 211px;
   height: 46px;
-  transition: background-color 0.3s ease
+  transition: background-color 0.3s ease;
+  font-weight: 700;
 }
 
 .modal-btn:hover,

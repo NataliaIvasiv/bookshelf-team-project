@@ -51,7 +51,7 @@ let selectedCategory;
 window.addEventListener('load', async () => {
   showLoader();
   await addCategoriesList();
-  
+  highlightSelectedCategory('All categories')
   await renderPopularBooks('All categories');
   hideLoader();
   
@@ -85,11 +85,14 @@ async function onCatListClick(e) {
 function highlightSelectedCategory(selectedCategory) {
   const items = document.querySelectorAll('.categories-list-item');
   for (const item of items) {
-    if (item.textContent === selectedCategory.textContent)
+    if (item.textContent === selectedCategory.textContent || item.textContent === selectedCategory)
       item.classList.add('categories-list-active');
     else item.classList.remove('categories-list-active');
   }
 }
+
+
+
 
 // ================ALL BOOKS CONTAINER EVENT LISTENER================
 
@@ -103,7 +106,9 @@ refs.allCategoriesContainer.addEventListener('click', async e => {
     try {
       books = await booksApi.getSelectedCategory(selectedSeeMore);
       bookTitleSeeMore(selectedSeeMore);
+      highlightSelectedCategory(selectedSeeMore)
       renderCategoriesMain(books);
+      
     } catch (err) {
       console.log('error');
       emptyPage();
