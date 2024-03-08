@@ -89,6 +89,7 @@ button.support-btn.swiper-button-next {
   height: 32px;
   padding: 0;
   margin-top: 0;
+  z-index: 4;
 }
 
 .swiper-button-next:hover {
