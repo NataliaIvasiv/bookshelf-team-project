@@ -38,10 +38,13 @@
 .swiper {
   height: 188px;
   margin-bottom: 16px;
+  margin-left: 0;
 
   overflow: hidden;
 }
-
+.support-container .swiper{
+  margin-left: 0;
+}
 .support-list-js {
   display: flex;
   flex-direction: column;
@@ -107,6 +110,7 @@ button.support-btn.swiper-button-next {
   .swiper {
     height: 292px;
     margin-bottom: 32px;
+    margin-left: 0;
   }
   .support-btn {
     width: 38px;
@@ -122,5 +126,6 @@ button.support-btn.swiper-button-next {
   }
   .swiper {
     margin-bottom: 40px;
+    margin-left: 0;
   }
 }
